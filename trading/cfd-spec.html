@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Спецификация контрактов — PERFEX</title>
+<link rel="stylesheet" href="../styles.css">
+<script>if(localStorage.getItem('theme')==='dark')document.documentElement.classList.add('dark');</script>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="icon" type="image/png" href="../favicon.png">
+</head>
+<body>
+<header class="site">
+<div class="wrap nav">
+<a href="../index.html" class="logo">PERF<span class="ex">EX</span></a>
+<nav class="main"><ul>
+
+<li class="mega cols-3"><a href="../trading/index.html">Торговля</a>
+<div class="megapanel">
+<div class="mega-col"><h5>Условия торговли</h5><ul>
+<li><a href="../trading/cashback.html">Cashback (Rebate)</a></li>
+<li><a href="../trading/cfd-spec.html">Спецификация контрактов</a></li>
+</ul></div>
+<div class="mega-col"><h5>Счета</h5><ul>
+<li><a href="../trading/accounts.html#standard">Standard</a></li>
+<li><a href="../trading/accounts.html#zero">Zero</a></li>
+<li><a href="../products/demo.html">Demo</a></li>
+<li><a href="../trading/islamic.html">Islamic (Swap-Free)</a></li>
+</ul></div>
+<div class="mega-col"><h5>Платформы</h5><ul>
+<li><a href="../trading/platforms.html">MetaTrader 4</a></li>
+</ul>
+<h5 style="margin-top:18px;">Финансы</h5><ul>
+<li><a href="../trading/deposits.html">Пополнение</a></li>
+<li><a href="../trading/withdrawal.html">Вывод средств</a></li>
+</ul></div>
+</div></li>
+
+<li><a href="../markets/index.html">Рынки</a><ul>
+<li><a href="../markets/forex.html">Forex</a></li>
+<li><a href="../markets/metals.html">Металлы</a></li>
+<li><a href="../markets/indices.html">Индексы</a></li>
+<li><a href="../markets/crypto.html">Криптовалюты</a></li>
+<li><a href="../markets/energies.html">Энергоносители</a></li>
+<li><a href="../markets/commodities.html">Сырьё</a></li>
+</ul></li>
+
+<li><a href="../partnership/index.html">Партнёрство</a></li>
+
+<li><a href="../promos.html">Акции</a><ul><li><a href="../promos.html#bonus">Бонус на депозит до 100%</a></li><li><a href="../promos.html#insurance">Страхование счёта</a></li><li><a href="../promos.html#switch">Переход от другого брокера</a></li><li><a href="../promos.html#contest">Битва трейдеров на демо</a></li></ul></li>
+
+<li><a href="../company/about.html">Компания</a><ul>
+<li><a href="../company/about.html">О компании</a></li>
+<li><a href="../company/documents.html">Документы</a></li>
+</ul></li>
+
+</ul></nav>
+<div class="lang-switch">
+<button class="lang-btn" aria-label="Язык" type="button">
+<span class="lang-flag">🇷🇺</span><span class="lang-code">RU</span>
+<svg width="10" height="10" viewBox="0 0 10 10"><path d="M1 3 L5 7 L9 3" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+<ul class="lang-menu">
+<li data-flag="🇷🇺" data-code="RU"><span class="lang-flag">🇷🇺</span>Русский<span class="lang-code">RU</span></li>
+<li data-flag="🇬🇧" data-code="EN"><span class="lang-flag">🇬🇧</span>English<span class="lang-code">EN</span></li>
+<li data-flag="🇦🇪" data-code="AR"><span class="lang-flag">🇦🇪</span>العربية<span class="lang-code">AR</span></li>
+<li data-flag="🇻🇳" data-code="VT"><span class="lang-flag">🇻🇳</span>Tiếng Việt<span class="lang-code">VT</span></li>
+</ul>
+</div>
+<button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
+<svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+<svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+</button>
+<a href="#" class="cta ghost">Вход</a>
+<a href="#" class="cta">Регистрация</a>
+</div>
+</header>
+<section class="page" style="padding-bottom: 20px;">
+<div class="wrap">
+<div class="crumbs"><a href="../index.html">Главная</a> / <a href="index.html">Торговля</a> / Спецификация контрактов</div>
+<h1>Спецификация контрактов</h1>
+<p class="lead">Торгуйте валютами, металлами, индексами, энергоносителями и криптовалютой. Спреды от 0 пунктов, плечо до 1:1000 — честные условия по каждому из 60 инструментов.</p>
+<div class="spec-nav"><a class="tab" href="#forex">Forex <span class="cnt">38</span></a><a class="tab" href="#metals">Металлы <span class="cnt">2</span></a><a class="tab" href="#indices">Индексы <span class="cnt">11</span></a><a class="tab" href="#energies">Энергоносители <span class="cnt">3</span></a><a class="tab" href="#crypto">Криптовалюты <span class="cnt">6</span></a></div>
+</div>
+</section>
+<section class="spec-groups" style="padding-top: 10px;">
+<div class="wrap">
+<h2 id="forex">Forex</h2>
+<div class="spec-scroll"><table class="spec-table">
+<thead><tr><th>Инструмент</th><th>Спред от</th><th>Часы торговли, GMT</th></tr></thead><tbody>
+<tr><td><strong>AUDCAD</strong><span class="sub">Australian Dollar / Canadian Dollar</span></td><td>0.0</td><td>Вс 22:05 — 20:55<span class="sub">перерыв 20:59–21:06</span></td></tr>
+<tr><td><strong>AUDCHF</strong><span class="sub">Australian Dollar / Swiss Franc</span></td><td>0.0</td><td>Вс 22:05 — 20:55<span class="sub">перерыв 20:59–21:06</span></td></tr>
+<tr><td><strong>AUDJPY</strong><span class="sub">Australian Dollar / Japanese Yen</span></td><td>0.0</td><td>Вс 22:05 — 20:55<span class="sub">перерыв 20:59–21:06</span></td></tr>
+<tr><td><strong>AUDNZD</strong><span class="sub">Australian Dollar / New Zealand Dollar</span></td><td>0.0</td><td>Вс 22:05 — 20:55<span class="sub">перерыв 20:59–21:06</span></td></tr>
+<tr><td><strong>AUDUSD</strong><span class="sub">Australian Dollar / US Dollar</span></td><td>0.0</td><td>Вс 22:05 — 20:55<span class="sub">перерыв 20:59–21:06</span></td></tr>
+<tr><td><strong>CADCHF</strong><span class="sub">Canadian Dollar / Swiss Franc</span></td><td>0.0</td><td>Вс 22:05 — 20:55<span class="sub">перерыв 20:59–21:06</span></td></tr>
+<tr><td><strong>CADJPY</strong><span class="sub">Canadian Dollar / Japanese Yen</span></td><td>0.0</td><td>Вс 22:05 — 20:55<span class="sub">перерыв 20:59–21:06</span></td></tr>
+<tr><td><strong>CHFJPY</strong><span class="sub">Swiss Franc / Japanese Yen</span></td><td>0.0</td><td>Вс 22:05 — 20:55<span class="sub">перерыв 20:59–21:06</span></td></tr>
+<tr><td><strong>EURAUD</strong><span class="sub">Euro / Australian Dollar</span></td><td>0.0</td><td>Вс 22:05 — 20:55<span class="sub">перерыв 20:59–21:06</span></td></tr>
+<tr><td><strong>EURCAD</strong><span class="sub">Euro / Canadian Dollar</span></td><td>0.0</td><td>Вс 22:05 — 20:55<span class="sub">перерыв 20:59–21:06</span></td></tr>
+<tr><td><strong>EURCHF</strong><span class="sub">Euro / Swiss Franc</span></td><td>0.0</td><td>Вс 22:05 — 20:55<span class="sub">перерыв 20:59–21:06</span></td></tr>
+<tr><td><strong>EURGBP</strong><span class="sub">Euro / Great Britain Pound</span></td><td>0.0</td><td>Вс 22:05 — 20:55<span class="sub">перерыв 20:59–21:06</span></td></tr>
+<tr><td><strong>EURJPY</strong><span class="sub">Euro / Japanese Yen</span></td><td>0.0</td><td>Вс 22:05 — 20:55<span class="sub">перерыв 20:59–21:06</span></td></tr>
+<tr><td><strong>EURNZD</strong><span class="sub">Euro / New Zealand Dollar</span></td><td>0.0</td><td>Вс 22:05 — 20:55<span class="sub">перерыв 20:59–21:06</span></td></tr>
+<tr><td><strong>EURRUB</strong><span class="sub">Euro / Russian Rouble</span></td><td>0.0</td><td>Пн 7:05 — 15:55<span class="sub">перерыв 15:55–07:05</span></td></tr>
+<tr><td><strong>EURUSD</strong><span class="sub">Euro / US Dollar</span></td><td>0.0</td><td>Вс 22:05 — 20:55<span class="sub">перерыв 20:59–21:06</span></td></tr>
+<tr><td><strong>GBPAUD</strong><span class="sub">Great Britain Pound / Australian Dollar</span></td><td>0.0</td><td>Вс 22:05 — 20:55<span class="sub">перерыв 20:59–21:06</span></td></tr>
+<tr><td><strong>GBPCAD</strong><span class="sub">Great Britain Pound / Canadian Dollar</span></td><td>0.0</td><td>Вс 22:05 — 20:55<span class="sub">перерыв 20:59–21:06</span></td></tr>
+<tr><td><strong>GBPCHF</strong><span class="sub">Great Britain Pound / Swiss Franc</span></td><td>0.0</td><td>Вс 22:05 — 20:55<span class="sub">перерыв 20:59–21:06</span></td></tr>
+<tr><td><strong>GBPJPY</strong><span class="sub">Great Britain Pound / Japanese Yen</span></td><td>0.0</td><td>Вс 22:05 — 20:55<span class="sub">перерыв 20:59–21:06</span></td></tr>
+<tr><td><strong>GBPNZD</strong><span class="sub">Great Britain Pound / New Zealand Dollar</span></td><td>0.0</td><td>Вс 22:05 — 20:55<span class="sub">перерыв 20:59–21:06</span></td></tr>
+<tr><td><strong>GBPUSD</strong><span class="sub">Great Britain Pound / US Dollar</span></td><td>0.0</td><td>Вс 22:05 — 20:55<span class="sub">перерыв 20:59–21:06</span></td></tr>
+<tr><td><strong>NZDCAD</strong><span class="sub">New Zealand Dollar / Canadian Dollar</span></td><td>0.0</td><td>Вс 22:05 — 20:55<span class="sub">перерыв 20:59–21:06</span></td></tr>
+<tr><td><strong>NZDCHF</strong><span class="sub">New Zealand Dollar / Swiss Franc</span></td><td>0.0</td><td>Вс 22:05 — 20:55<span class="sub">перерыв 20:59–21:06</span></td></tr>
+<tr><td><strong>NZDJPY</strong><span class="sub">New Zealand Dollar / Japanese Yen</span></td><td>0.0</td><td>Вс 22:05 — 20:55<span class="sub">перерыв 20:59–21:06</span></td></tr>
+<tr><td><strong>NZDUSD</strong><span class="sub">New Zealand Dollar / US Dollar</span></td><td>0.0</td><td>Вс 22:05 — 20:55<span class="sub">перерыв 20:59–21:06</span></td></tr>
+<tr><td><strong>USDCAD</strong><span class="sub">US Dollar / Canadian Dollar</span></td><td>0.0</td><td>Вс 22:05 — 20:55<span class="sub">перерыв 20:59–21:06</span></td></tr>
+<tr><td><strong>USDCHF</strong><span class="sub">US Dollar / Swiss Franc</span></td><td>0.0</td><td>Вс 22:05 — 20:55<span class="sub">перерыв 20:59–21:06</span></td></tr>
+<tr><td><strong>USDDKK</strong><span class="sub">US Dollar / Swedish Krone</span></td><td>0.0</td><td>Вс 22:05 — 20:55<span class="sub">перерыв 20:59–21:06</span></td></tr>
+<tr><td><strong>USDHKD</strong><span class="sub">US Dollar / Hong Kong Dollar</span></td><td>0.0</td><td>Вс 22:05 — 20:55<span class="sub">перерыв 20:59–21:06</span></td></tr>
+<tr><td><strong>USDJPY</strong><span class="sub">US Dollar / Japanese Yen</span></td><td>0.0</td><td>Вс 22:05 — 20:55<span class="sub">перерыв 20:59–21:06</span></td></tr>
+<tr><td><strong>USDMXN</strong><span class="sub">US Dollar / Mexican Peso</span></td><td>0.0</td><td>Вс 22:05 — 20:55<span class="sub">перерыв 20:59–21:06</span></td></tr>
+<tr><td><strong>USDNOK</strong><span class="sub">US Dollar / Norway Krone</span></td><td>0.0</td><td>Вс 22:05 — 20:55<span class="sub">перерыв 20:59–21:06</span></td></tr>
+<tr><td><strong>USDRUB</strong><span class="sub">US Dollar / Russian Rouble</span></td><td>0.0</td><td>Пн 7:05 — 15:55<span class="sub">перерыв 15:55–07:05</span></td></tr>
+<tr><td><strong>USDSEK</strong><span class="sub">US Dollar / Swedish Krone</span></td><td>0.0</td><td>Вс 22:05 — 20:55<span class="sub">перерыв 20:59–21:06</span></td></tr>
+<tr><td><strong>USDSGD</strong><span class="sub">US Dollar / Singapore Dollar</span></td><td>0.0</td><td>Вс 22:05 — 20:55<span class="sub">перерыв 20:59–21:06</span></td></tr>
+<tr><td><strong>USDTRY</strong><span class="sub">US Dollar / Turkish Lira</span></td><td>0.0</td><td>Вс 22:05 — 20:55<span class="sub">перерыв 20:59–21:06</span></td></tr>
+<tr><td><strong>USDZAR</strong><span class="sub">US Dollar / South African Rand</span></td><td>0.0</td><td>Вс 22:05 — 20:55<span class="sub">перерыв 20:59–21:06</span></td></tr>
+</tbody></table></div>
+<h2 id="metals">Металлы</h2>
+<div class="spec-scroll"><table class="spec-table">
+<thead><tr><th>Инструмент</th><th>Спред от</th><th>Часы торговли, GMT</th></tr></thead><tbody>
+<tr><td><strong>XAGUSD</strong><span class="sub">Silver / US Dollar</span></td><td>0.0</td><td>Вс 22:05 — 20:55<span class="sub">перерыв 20:59–22:06</span></td></tr>
+<tr><td><strong>XAUUSD</strong><span class="sub">Gold / US Dollar</span></td><td>0.0</td><td>Вс 22:05 — 20:55<span class="sub">перерыв 20:59–22:06</span></td></tr>
+</tbody></table></div>
+<h2 id="indices">Индексы</h2>
+<div class="spec-scroll"><table class="spec-table">
+<thead><tr><th>Инструмент</th><th>Спред от</th><th>Часы торговли, GMT</th></tr></thead><tbody>
+<tr><td><strong>ASX200</strong><span class="sub">Index ASX200 / (Australia 200)</span></td><td>0.4</td><td>Вс 22:05 — 20:55<span class="sub">перерыв 20:59–22:06</span></td></tr>
+<tr><td><strong>CAC40</strong><span class="sub">Index CAC40 / (France 40)</span></td><td>1.2</td><td>Вс 22:05 — 20:55<span class="sub">перерыв 20:59–22:06</span></td></tr>
+<tr><td><strong>DAX30</strong><span class="sub">Index DAX30 / (Germany 30)</span></td><td>1.2</td><td>Пн 00:31 — 19:55<span class="sub">перерыв 19:59–00:31</span></td></tr>
+<tr><td><strong>DJI30</strong><span class="sub">Index DJI30 / (Wall Street 30)</span></td><td>0.0</td><td>Вс 22:05 — 20:55<span class="sub">перерыв 20:59–22:06</span></td></tr>
+<tr><td><strong>FTSE100</strong><span class="sub">Index FTSE100 / (UK 100)</span></td><td>2.4</td><td>Вс 22:05 — 20:55<span class="sub">перерыв 20:59–22:06</span></td></tr>
+<tr><td><strong>HSI50</strong><span class="sub">Index HSI50 / (Hong Kong 50)</span></td><td>5.0</td><td>Пн 01:15 — 18:45<span class="sub">перерыв 18:45–01:15</span></td></tr>
+<tr><td><strong>IBEX35</strong><span class="sub">Index IBEX35 / (Spain 35)</span></td><td>2.2</td><td>Пн 06:01 — 17:59<span class="sub">перерыв 17:59–06:01</span></td></tr>
+<tr><td><strong>NASDAQ100</strong><span class="sub">Index NASDAQ100 / (US Tech 100)</span></td><td>1.0</td><td>Вс 22:05 — 20:55<span class="sub">перерыв 20:59–22:06</span></td></tr>
+<tr><td><strong>NIKKEI225</strong><span class="sub">Index NIKKEI225 / (Japan 225)</span></td><td>18.0</td><td>Вс 22:05 — 20:55<span class="sub">перерыв 20:59–22:06</span></td></tr>
+<tr><td><strong>S&P500</strong><span class="sub">Index S&P500 / (US SPX 500)</span></td><td>0.6</td><td>Вс 22:05 — 20:55<span class="sub">перерыв 20:59–22:06</span></td></tr>
+<tr><td><strong>STOXX50</strong><span class="sub">Index STOXX50 / (Europe 50)</span></td><td>1.2</td><td>Вс 22:05 — 20:55<span class="sub">перерыв 20:59–22:06</span></td></tr>
+</tbody></table></div>
+<h2 id="energies">Энергоносители</h2>
+<div class="spec-scroll"><table class="spec-table">
+<thead><tr><th>Инструмент</th><th>Спред от</th><th>Часы торговли, GMT</th></tr></thead><tbody>
+<tr><td><strong>XBRUSD</strong><span class="sub">Brent Oil / US Dollar</span></td><td>0.0</td><td>Пн 00:01 — 20:55<span class="sub">перерыв 20:59–00:01</span></td></tr>
+<tr><td><strong>XNGUSD</strong><span class="sub">Natural Gas / US Dollar</span></td><td>0.0</td><td>Вс 22:05 — 20:55<span class="sub">перерыв 20:59–22:06</span></td></tr>
+<tr><td><strong>XTIUSD</strong><span class="sub">WTI Oil / US Dollar</span></td><td>0.0</td><td>Вс 22:05 — 20:55<span class="sub">перерыв 20:59–22:06</span></td></tr>
+</tbody></table></div>
+<h2 id="crypto">Криптовалюты</h2>
+<div class="spec-scroll"><table class="spec-table">
+<thead><tr><th>Инструмент</th><th>Спред от</th><th>Часы торговли, GMT</th></tr></thead><tbody>
+<tr><td><strong>BCHUSD</strong><span class="sub">Bitcoin Cash / US Dollar</span></td><td>0.6</td><td>Вс 22:05 — 20:55<span class="sub">перерыв 20:59–21:06</span></td></tr>
+<tr><td><strong>BTCUSD</strong><span class="sub">Bitcoin / US Dollar</span></td><td>4.0</td><td>Вс 22:05 — 20:55<span class="sub">перерыв 20:59–21:06</span></td></tr>
+<tr><td><strong>ETHUSD</strong><span class="sub">Ethereum / US Dollar</span></td><td>2.0</td><td>Вс 22:05 — 20:55<span class="sub">перерыв 20:59–21:06</span></td></tr>
+<tr><td><strong>LTCUSD</strong><span class="sub">Litecoin / US Dollar</span></td><td>0.02</td><td>Вс 22:05 — 20:55<span class="sub">перерыв 20:59–21:06</span></td></tr>
+<tr><td><strong>TONUSD</strong><span class="sub">Toncoin / US Dollar</span></td><td>0.01</td><td>Вс 22:05 — 20:55<span class="sub">перерыв 20:59–21:06</span></td></tr>
+<tr><td><strong>XRPUSD</strong><span class="sub">Ripple / US Dollar</span></td><td>40.0</td><td>Вс 22:05 — 20:55<span class="sub">перерыв 20:59–21:06</span></td></tr>
+</tbody></table></div>
+<p class="spec-note">Время — GMT, спреды — в пунктах. Спред указан минимальный и может расширяться при низкой ликвидности и на новостях. Кредитное плечо зависит от инструмента и суммы средств на счёте — до 1:1000 на Forex. Свопы и полные условия — в торговом терминале.</p>
+</div>
+</section>
+<footer class="site">
+<div class="wrap">
+<div class="grid">
+<div><div class="logo" style="margin-bottom:14px;">PERF<span class="ex">EX</span></div><p style="font-size:13px;">Perfect Execution. Forex и CFD брокер с фокусом на исполнение сделок и честные условия.</p></div>
+<div><h4>Торговля</h4><ul><li><a href="../trading/accounts.html">Типы счетов</a></li><li><a href="../trading/conditions.html">Условия</a></li><li><a href="../trading/platforms.html">Платформы</a></li><li><a href="../trading/deposits.html">Пополнение</a></li>
+<li><a href="../trading/withdrawal.html">Вывод средств</a></li></ul></div>
+<div><h4>Компания</h4><ul><li><a href="../company/about.html">О нас</a></li><li><a href="../company/about.html#regulation">Безопасность</a></li><li><a href="../company/documents.html">Документы</a></li><li><a href="../company/about.html#contacts">Контакты</a></li></ul></div>
+<div><h4>Клиентам</h4><ul><li><a href="../products/demo.html">Демо-счёт</a></li><li><a href="../partnership/index.html">Партнёрство</a></li><li><a href="../promos.html">Акции</a></li></ul></div>
+</div>
+<div class="legal">Торговля с кредитным плечом связана с высоким риском. Потери могут превысить первоначальные вложения. Торгуйте только теми средствами, потерю которых вы можете себе позволить.<br>© 2026 PERF<span class="ex">EX</span>.</div>
+</div>
+</footer>
+<script>
+(function(){
+  const tb = document.getElementById('themeToggle');
+  if (tb) tb.addEventListener('click', () => {
+    const isDark = document.documentElement.classList.toggle('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  });
+  const lb = document.querySelector('.lang-btn');
+  const lm = document.querySelector('.lang-menu');
+  if (lb && lm) {
+    const fe = lb.querySelector('.lang-flag');
+    const ce = lb.querySelector('.lang-code');
+    const saved = localStorage.getItem('lang');
+    if (saved) { try { const d = JSON.parse(saved); fe.textContent = d.flag; ce.textContent = d.code; } catch(e){} }
+    lb.addEventListener('click', (e) => { e.stopPropagation(); lm.classList.toggle('open'); });
+    lm.querySelectorAll('li').forEach(li => {
+      li.addEventListener('click', () => {
+        const flag = li.dataset.flag, code = li.dataset.code;
+        fe.textContent = flag; ce.textContent = code;
+        localStorage.setItem('lang', JSON.stringify({flag, code}));
+        lm.classList.remove('open');
+      });
+    });
+    document.addEventListener('click', () => lm.classList.remove('open'));
+  }
+})();
+</script>
+</body>
+</html>
