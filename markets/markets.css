@@ -1,0 +1,18 @@
+/* Раздел «Рынки»: картинка в первом экране и карточки живых котировок */
+
+.mh-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 40px; align-items: center; }
+.mh-art { display: flex; justify-content: center; }
+.mh-art svg { display: block; width: 100%; max-width: 440px; height: auto; overflow: visible; filter: drop-shadow(0 26px 40px rgba(0,0,0,.28)); }
+@media (max-width: 900px) {
+  .mh-grid { grid-template-columns: 1fr; gap: 28px; }
+  .mh-art svg { max-width: 300px; }
+}
+
+.instrument-card .right { flex-direction: column; align-items: flex-end; gap: 4px; }
+.instrument-card .price { font-size: 18px; font-weight: 700; transition: color .6s ease; }
+.instrument-card .price.up { color: var(--up); transition: none; animation: q-fade 1.2s ease forwards; }
+.instrument-card .price.down { color: var(--down); transition: none; animation: q-fade 1.2s ease forwards; }
+@keyframes q-fade { 0%, 45% { opacity: 1; } 100% { color: var(--text); } }
+.instrument-card .q-sub { display: flex; gap: 12px; font-size: 12px; color: var(--text-3); white-space: nowrap; }
+.instrument-card .q-sub b { font-weight: 600; color: var(--text-2); font-variant-numeric: tabular-nums; }
+@media (max-width: 400px) { .instrument-card { padding: 18px; } .instrument-card .q-sub { gap: 8px; } }
