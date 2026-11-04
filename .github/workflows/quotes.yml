@@ -1,0 +1,34 @@
+# Котировки для раздела «Рынки»: раз в 15 минут забираем цены с online.npbfxrus.pro
+# и кладём в data/quotes.json. Индексы и газ на сайте берутся только отсюда,
+# остальное страница получает живым потоком, а этот файл — запасной вариант.
+name: Котировки
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: quotes
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Забрать котировки
+        run: python3 .github/scripts/quotes.py
+      - name: Сохранить
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898+github-actions[bot]@users.noreply.github.com"
+          git add data/quotes.json
+          if git diff --cached --quiet; then echo "без изменений"; exit 0; fi
+          git commit -m "Котировки"
+          for i in 1 2 3; do git pull --rebase -q && git push -q && exit 0; sleep 5; done
+          exit 1
