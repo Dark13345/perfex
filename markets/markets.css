@@ -16,3 +16,7 @@
 .instrument-card .q-sub { display: flex; gap: 12px; font-size: 12px; color: var(--text-3); white-space: nowrap; }
 .instrument-card .q-sub b { font-weight: 600; color: var(--text-2); font-variant-numeric: tabular-nums; }
 @media (max-width: 400px) { .instrument-card { padding: 18px; } .instrument-card .q-sub { gap: 8px; } }
+.instrument-card .left { min-width: 0; }
+.instrument-card .q-ico { flex: 0 0 auto; width: auto; height: 40px; max-width: 72px; object-fit: contain; }
+.instruments { grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)) !important; }
+.instrument-card { gap: 16px; }
