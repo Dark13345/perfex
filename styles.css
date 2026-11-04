@@ -918,6 +918,7 @@ p, li, td, th, a, input, button, label, .page ul li { text-transform: none; }
 .tr-other { background: var(--card); border: 1px dashed var(--text-3); color: var(--text-3); font-size: 14px; }
 .tr-perfex { background: #181A20; color: #fff; font-size: 19px; box-shadow: 0 14px 34px rgba(240,185,11,.28); border: 1px solid #F0B90B; }
 .tr-perfex .ex { color: #F0B90B !important; }
+.cta-banner .ex { color: inherit !important; }
 .tr-arrows { color: var(--accent); font-size: 40px; font-weight: 700; letter-spacing: -6px; line-height: 1; }
 .grid.tr-cols-4 { grid-template-columns: repeat(4, 1fr); }
 .features .grid.tr-cols-4 .card, .features .grid.cols-3 .card { background: var(--card); }
