@@ -107,6 +107,15 @@
 .t2-new b.pos { color: #0ECB81; }
 .t2-new b.acc { color: #F0B90B; }
 .t2-arrow { width: 46px; height: 46px; border-radius: 50%; background: #F0B90B; color: #181A20; display: flex; align-items: center; justify-content: center; }
+.t2-move { position: relative; perspective: 1100px; padding: 30px 0 10px; }
+.t2-old { transform: rotateY(16deg) rotateX(4deg) scale(.96); transform-origin: right center; background: linear-gradient(160deg, #2A303A, #15191F); border: 1px solid #343B46; box-shadow: 0 34px 60px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.07); }
+.t2-new { transform: rotateY(-14deg) rotateX(4deg); transform-origin: left center; background: linear-gradient(160deg, #1D222A, #0B0E11); border: 1px solid rgba(240,185,11,.95); box-shadow: 0 34px 70px rgba(240,185,11,.24), 0 0 0 5px rgba(240,185,11,.08), inset 0 1px 0 rgba(255,255,255,.1); }
+.t2-acc-h { display: flex; align-items: center; gap: 8px; }
+.t2-acc-h .dot { width: 8px; height: 8px; border-radius: 50%; background: currentColor; box-shadow: 0 0 10px currentColor; }
+.t2-arrow { position: relative; z-index: 2; width: 56px; height: 56px; background: radial-gradient(circle at 35% 28%, #FFF3B0, #FCD535 38%, #E5A800 75%, #B98300); box-shadow: 0 14px 28px rgba(240,185,11,.45), inset 0 -4px 8px rgba(0,0,0,.18), inset 0 2px 2px rgba(255,255,255,.6); }
+.t2-fcoin { position: absolute; z-index: 3; overflow: visible; filter: drop-shadow(0 10px 10px rgba(0,0,0,.4)); }
+.t2-fcoin.c1 { left: 47%; top: -8px; }
+.t2-fcoin.c2 { right: 2%; top: 4px; }
 .t2-spark { display: block; width: 100%; height: 46px; margin: 4px 0 10px; }
 .t2-note { color: #5E6673; font-size: 12px; margin-top: 12px; text-align: right; }
 
@@ -139,23 +148,24 @@ html.dark .t2-b-move p { color: #B7BDC6; }
 .t2-b-funds p { color: #B7BDC6; }
 .t2-b-funds { grid-template-columns: 1fr; align-content: space-between; }
 .t2-b-funds .art { justify-content: flex-end; }
-.t2-b-funds::before { content: '50'; position: absolute; right: -20px; top: -70px; font-family: "Unbounded", sans-serif; font-weight: 800; font-size: 300px; line-height: 1; color: rgba(255,255,255,.04); }
-.t2-big { font-family: "Unbounded", "Inter", sans-serif; font-weight: 800; line-height: .9; background: linear-gradient(135deg, #FCD535 0%, #F0B90B 45%, #F08C0B 100%); -webkit-background-clip: text; background-clip: text; color: transparent; display: flex; align-items: flex-end; justify-content: flex-end; gap: 6px; }
-.t2-big small { font-size: 28px; margin-bottom: 12px; }
-.t2-big span { font-size: 96px; letter-spacing: -0.04em; }
-.t2-big sup { font-size: 40px; align-self: flex-start; margin-top: 4px; }
 .t2-b-swap { background: #FBF3D5; color: #181A20; }
 .t2-b-swap p { color: #5E5432; }
 html.dark .t2-b-swap { background: #2A2614; color: #EAECEF; }
 html.dark .t2-b-swap p { color: #C9BE96; }
 .t2-b-swap::before { content: 'SWAP FREE'; position: absolute; left: 30px; bottom: -34px; font-family: "Unbounded", sans-serif; font-weight: 800; font-size: 104px; line-height: 1; color: rgba(240,185,11,.13); white-space: nowrap; }
-.t2-badge { width: 128px; height: 128px; border-radius: 26px; background: linear-gradient(145deg, #FFE27A, #F0B90B 55%, #C99400); box-shadow: 0 18px 36px rgba(201,148,0,.35), inset 0 2px 0 rgba(255,255,255,.5); display: flex; align-items: center; justify-content: center; text-align: center; font-family: "Unbounded", sans-serif; font-weight: 800; font-size: 22px; line-height: 1.05; color: #181A20; transform: rotate(-6deg); position: relative; z-index: 2; }
-.t2-mini { width: 120px; height: 120px; border-radius: 20px; background: #181A20; margin-left: -34px; margin-top: 70px; padding: 14px; box-shadow: 0 14px 30px rgba(0,0,0,.25); }
+.t2-art { display: block; max-width: 100%; height: auto; overflow: visible; }
+.t2-b-funds::before { content: ''; position: absolute; right: -60px; bottom: -80px; width: 340px; height: 340px; border-radius: 50%; background: radial-gradient(circle, rgba(240,185,11,.22), transparent 65%); }
+.t2-b-funds .art { justify-content: flex-end; }
+.t2-mcard .ava { position: relative; background: radial-gradient(circle at 35% 30%, #3A414C, #0B0E11); box-shadow: 0 6px 14px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.15); }
+.t2-mcard .ava .on { position: absolute; right: 1px; bottom: 1px; width: 13px; height: 13px; border-radius: 50%; background: #0ECB81; border: 2px solid #fff; }
+.t2-mcard { box-shadow: 0 24px 50px rgba(0,0,0,.22), 0 2px 0 rgba(255,255,255,.6) inset; }
+.t2-mcard .mail { background: linear-gradient(145deg, #FFE27A, #F0B90B 60%, #C99400); box-shadow: 0 10px 20px rgba(240,185,11,.45), inset 0 1px 0 rgba(255,255,255,.6); }
+.t2-mcard .tip { position: absolute; left: -46px; bottom: -18px; display: flex; align-items: center; gap: 6px; background: #181A20; color: #FCD535; font-size: 11px; font-weight: 700; padding: 8px 12px; border-radius: 50px; box-shadow: 0 10px 22px rgba(0,0,0,.3); white-space: nowrap; }
 .t2-b-mgr { background: #F5F5F5; color: #181A20; }
 .t2-b-mgr p { color: #474D57; }
 html.dark .t2-b-mgr { background: #1E2329; color: #EAECEF; }
 html.dark .t2-b-mgr p { color: #B7BDC6; }
-.t2-chart { position: absolute; right: 0; bottom: 0; width: 62%; height: 100%; opacity: .9; }
+.t2-chart { position: absolute; right: 0; bottom: 0; width: 68%; height: 100%; }
 .t2-mcard { position: relative; z-index: 2; background: #fff; border-radius: 16px; padding: 18px 20px; box-shadow: 0 16px 40px rgba(0,0,0,.14); text-align: center; width: 170px; color: #181A20; }
 .t2-mcard .ava { width: 54px; height: 54px; border-radius: 50%; margin: 0 auto 10px; background: #181A20; color: #F0B90B; display: flex; align-items: center; justify-content: center; }
 .t2-mcard b { display: block; font-size: 13px; }
@@ -211,13 +221,16 @@ html.dark .t2-b-mgr p { color: #B7BDC6; }
   .t2-hero .t2-lead { font-size: 16px; }
   .t2-move { grid-template-columns: 1fr; justify-items: stretch; }
   .t2-arrow { transform: rotate(90deg); justify-self: center; }
+  .t2-old, .t2-new { transform: none; }
+  .t2-fcoin.c1 { left: auto; right: 8%; top: 46%; }
+  .t2-fcoin.c2 { display: none; }
   .t2-sec { padding: 52px 0; }
   .t2-who { grid-template-columns: 1fr; }
   .t2-b { grid-template-columns: 1fr; padding: 28px 24px; min-height: 0; }
   .t2-b .art { justify-content: flex-start; }
-  .t2-big { justify-content: flex-start; }
-  .t2-big span { font-size: 96px; }
-  .t2-chart { width: 100%; height: 55%; top: auto; opacity: .5; }
+  .t2-chart { width: 100%; height: 55%; top: auto; opacity: .45; }
+  .t2-mcard .tip { left: -14px; }
+  .t2-b-mgr { padding-bottom: 44px; }
   .t2-cmp-row { grid-template-columns: 1fr 1fr; }
   .t2-cmp-row > div:first-child { grid-column: 1 / -1; padding-bottom: 4px; border-top: 1px solid var(--border); background: var(--bg-soft); font-size: 13px; }
   .t2-cmp-row:first-child > div:first-child { display: none; }
@@ -249,17 +262,19 @@ html.dark .t2-b-mgr p { color: #B7BDC6; }
 
 <div>
 <div class="t2-move">
+<svg class="t2-fcoin c1" viewBox="-46 -20 92 54" width="70" height="42" aria-hidden="true"><g transform="rotate(-18)"><use href="#t2coin"/></g></svg>
+<svg class="t2-fcoin c2" viewBox="-46 -20 92 54" width="52" height="31" aria-hidden="true"><g transform="rotate(16)"><use href="#t2coin"/></g></svg>
 <div class="t2-acc t2-old">
-<div class="t2-acc-h">Другой брокер</div>
-<svg class="t2-spark" viewBox="0 0 160 46" preserveAspectRatio="none"><path d="M0 8 L18 12 L30 9 L46 18 L60 16 L76 26 L92 24 L108 33 L124 30 L140 39 L160 42" fill="none" stroke="#F6465D" stroke-width="2.4" stroke-linejoin="round"/></svg>
+<div class="t2-acc-h"><span class="dot"></span>Другой брокер</div>
+<svg class="t2-spark" viewBox="0 0 160 52" preserveAspectRatio="none"><defs><linearGradient id="t2redA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F6465D" stop-opacity=".4"/><stop offset="1" stop-color="#F6465D" stop-opacity="0"/></linearGradient></defs><path d="M0 8 L18 12 L30 9 L46 18 L60 16 L76 26 L92 24 L108 33 L124 30 L140 39 L160 42 L160 52 L0 52Z" fill="url(#t2redA)"/><path d="M0 8 L18 12 L30 9 L46 18 L60 16 L76 26 L92 24 L108 33 L124 30 L140 39 L160 42" fill="none" stroke="#F6465D" stroke-width="2.4" stroke-linejoin="round"/></svg>
 <div class="row"><span>Позиции</span><b>3 открыты</b></div>
 <div class="row"><span>Свободная маржа</span><b class="neg">почти 0</b></div>
 <div class="row"><span>Свопы</span><b class="neg">каждую ночь</b></div>
 </div>
-<div class="t2-arrow" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+<div class="t2-arrow" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
 <div class="t2-acc t2-new">
-<div class="t2-acc-h">PERFEX</div>
-<svg class="t2-spark" viewBox="0 0 160 46" preserveAspectRatio="none"><path d="M0 40 L16 36 L30 38 L44 30 L58 32 L74 22 L90 25 L106 16 L122 18 L140 9 L160 5" fill="none" stroke="#0ECB81" stroke-width="2.4" stroke-linejoin="round"/></svg>
+<div class="t2-acc-h"><span class="dot"></span>PERFEX</div>
+<svg class="t2-spark" viewBox="0 0 160 52" preserveAspectRatio="none"><path d="M0 40 L16 36 L30 38 L44 30 L58 32 L74 22 L90 25 L106 16 L122 18 L140 9 L160 5 L160 52 L0 52Z" fill="url(#t2green)"/><path d="M0 40 L16 36 L30 38 L44 30 L58 32 L74 22 L90 25 L106 16 L122 18 L140 9 L160 5" fill="none" stroke="#0ECB81" stroke-width="2.4" stroke-linejoin="round"/></svg>
 <div class="row"><span>Позиции</span><b class="pos">3 перенесены</b></div>
 <div class="row"><span>Средства брокера</span><b class="acc">до +50%</b></div>
 <div class="row"><span>Свопы</span><b class="pos">0</b></div>
@@ -310,21 +325,63 @@ html.dark .t2-b-mgr p { color: #B7BDC6; }
 </div>
 <div class="t2-bento">
 
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+<filter id="t2sh" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="12" stdDeviation="10" flood-color="#000" flood-opacity=".35"/></filter>
+<filter id="t2glow" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<linearGradient id="t2red" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF8A98"/><stop offset=".55" stop-color="#F6465D"/><stop offset="1" stop-color="#D42A42"/></linearGradient>
+<linearGradient id="t2goldSide" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8F6200"/><stop offset=".22" stop-color="#D99A00"/><stop offset=".45" stop-color="#FFE07A"/><stop offset=".62" stop-color="#F0B90B"/><stop offset="1" stop-color="#7A5300"/></linearGradient>
+<radialGradient id="t2goldTop" cx=".38" cy=".32" r=".8"><stop offset="0" stop-color="#FFF6C4"/><stop offset=".35" stop-color="#FCD535"/><stop offset=".8" stop-color="#E5A800"/><stop offset="1" stop-color="#C98F00"/></radialGradient>
+<linearGradient id="t2goldFace" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFE98A"/><stop offset=".45" stop-color="#F7C21A"/><stop offset="1" stop-color="#D49A00"/></linearGradient>
+<linearGradient id="t2goldNum" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFF0A0"/><stop offset=".45" stop-color="#FCD535"/><stop offset="1" stop-color="#F09A0B"/></linearGradient>
+<linearGradient id="t2dark" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3A414C"/><stop offset="1" stop-color="#0B0E11"/></linearGradient>
+<linearGradient id="t2green" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0ECB81" stop-opacity=".55"/><stop offset="1" stop-color="#0ECB81" stop-opacity="0"/></linearGradient>
+<linearGradient id="t2cUp" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3FE3A4"/><stop offset=".6" stop-color="#0ECB81"/><stop offset="1" stop-color="#08875A"/></linearGradient>
+<linearGradient id="t2cDn" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FF7F90"/><stop offset=".6" stop-color="#F6465D"/><stop offset="1" stop-color="#A9223A"/></linearGradient>
+<linearGradient id="t2gloss" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<g id="t2coin">
+<ellipse cx="0" cy="15" rx="40" ry="13" fill="#6B4800"/>
+<rect x="-40" y="0" width="80" height="15" fill="url(#t2goldSide)"/>
+<path d="M-40 4h80M-40 8h80M-40 12h80" stroke="#7A5300" stroke-opacity=".35" stroke-width="1"/>
+<ellipse cx="0" cy="0" rx="40" ry="13" fill="url(#t2goldTop)"/>
+<ellipse cx="0" cy="0" rx="30" ry="9" fill="none" stroke="#C98F00" stroke-opacity=".55" stroke-width="1.6"/>
+<ellipse cx="-10" cy="-4" rx="14" ry="3.5" fill="#fff" opacity=".45"/>
+</g>
+<g id="t2spark"><path d="M0 -7 C1 -1 1 -1 7 0 C1 1 1 1 0 7 C-1 1 -1 1 -7 0 C-1 -1 -1 -1 0 -7Z" fill="#FFE98A"/></g>
+</defs>
+</svg>
+
 <div class="t2-b t2-b-move">
 <div>
 <h3>Простой перенос позиций без их закрытия</h3>
 <p>Все ордера переносятся по тем же ценам, по которым были открыты. Фиксировать убыток не нужно.</p>
 </div>
 <div class="art" aria-hidden="true">
-<svg width="230" height="170" viewBox="0 0 230 170">
-<rect x="4" y="52" width="74" height="74" rx="16" fill="#F6465D"/>
-<text x="41" y="86" text-anchor="middle" font-family="Unbounded, sans-serif" font-weight="700" font-size="10" fill="#fff">ДРУГОЙ</text>
-<text x="41" y="100" text-anchor="middle" font-family="Unbounded, sans-serif" font-weight="700" font-size="10" fill="#fff">БРОКЕР</text>
-<path d="M88 89h44" stroke="currentColor" stroke-opacity=".45" stroke-width="2"/><path d="M126 83l7 6-7 6" fill="none" stroke="currentColor" stroke-opacity=".45" stroke-width="2"/>
-<ellipse cx="186" cy="138" rx="34" ry="11" fill="#C99400"/><rect x="152" y="120" width="68" height="18" fill="#C99400"/><ellipse cx="186" cy="120" rx="34" ry="11" fill="#F0B90B"/>
-<ellipse cx="186" cy="110" rx="34" ry="11" fill="#C99400"/><rect x="152" y="92" width="68" height="18" fill="#C99400"/><ellipse cx="186" cy="92" rx="34" ry="11" fill="#FCD535"/>
-<ellipse cx="186" cy="82" rx="34" ry="11" fill="#C99400"/><rect x="152" y="64" width="68" height="18" fill="#C99400"/><ellipse cx="186" cy="64" rx="34" ry="11" fill="#FCD535"/>
-<circle cx="208" cy="130" r="20" fill="#181A20"/><path d="M199 123l6 7-6 7M207 123l6 7-6 7" fill="none" stroke="#F0B90B" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<svg class="t2-art" viewBox="0 0 270 210" width="270" height="210">
+<ellipse cx="62" cy="168" rx="46" ry="9" fill="#000" opacity=".18"/>
+<ellipse cx="205" cy="178" rx="58" ry="11" fill="#000" opacity=".22"/>
+<g transform="rotate(-8 60 105)">
+<rect x="24" y="72" width="84" height="84" rx="20" fill="#9E1C30"/>
+<rect x="16" y="62" width="84" height="84" rx="20" fill="url(#t2red)"/>
+<path d="M36 62h44a20 20 0 0 1 20 20v8c-26 10-58 10-84 0v-8a20 20 0 0 1 20-20z" fill="url(#t2gloss)" opacity=".7"/>
+<text x="58" y="100" text-anchor="middle" font-family="Unbounded, sans-serif" font-weight="800" font-size="11" fill="#fff">ДРУГОЙ</text>
+<text x="58" y="116" text-anchor="middle" font-family="Unbounded, sans-serif" font-weight="800" font-size="11" fill="#fff">БРОКЕР</text>
+</g>
+<path d="M112 96 C130 70 150 70 160 86" fill="none" stroke="#F0B90B" stroke-width="3" stroke-linecap="round" stroke-dasharray="2 8"/>
+<path d="M153 80l9 8-11 3" fill="none" stroke="#F0B90B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<g filter="url(#t2sh)">
+<use href="#t2coin" x="205" y="152"/>
+<use href="#t2coin" x="208" y="135"/>
+<use href="#t2coin" x="202" y="118"/>
+<use href="#t2coin" x="206" y="101"/>
+</g>
+<g transform="translate(180 50) rotate(-24) scale(.62)" filter="url(#t2sh)"><use href="#t2coin"/></g>
+<g filter="url(#t2sh)">
+<circle cx="246" cy="156" r="23" fill="url(#t2dark)"/>
+<circle cx="246" cy="156" r="22" fill="none" stroke="#fff" stroke-opacity=".12"/>
+<path d="M237 147l8 9-8 9M247 147l8 9-8 9" fill="none" stroke="#FCD535" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<use href="#t2spark" x="150" y="40"/><use href="#t2spark" x="250" y="60" transform="scale(1)" opacity=".7"/>
 </svg>
 </div>
 </div>
@@ -334,7 +391,35 @@ html.dark .t2-b-mgr p { color: #B7BDC6; }
 <h3>Средства от брокера для открытия сделок</h3>
 <p>Учитываются на балансе и работают в торговле, в том числе при просадке депозита.</p>
 </div>
-<div class="art"><div class="t2-big"><small>до</small><span>50</span><sup>%</sup></div></div>
+<div class="art" aria-hidden="true">
+<svg class="t2-art t2-art-num" viewBox="0 0 400 160" width="400" height="160">
+<g transform="translate(60 44) rotate(18) scale(.5)" filter="url(#t2sh)"><use href="#t2coin"/></g>
+<g transform="translate(384 140) rotate(-14) scale(.42)" filter="url(#t2sh)"><use href="#t2coin"/></g>
+<g font-family="Unbounded, sans-serif" font-weight="800">
+<g fill="#7A4E00">
+<text x="64" y="132" font-size="34">до</text>
+<text x="338" y="132" font-size="128" text-anchor="end" letter-spacing="-4">50</text>
+<text x="394" y="78" font-size="50" text-anchor="end">%</text>
+</g>
+<g fill="#A86E00" transform="translate(-3 -3)">
+<text x="64" y="132" font-size="34">до</text>
+<text x="338" y="132" font-size="128" text-anchor="end" letter-spacing="-4">50</text>
+<text x="394" y="78" font-size="50" text-anchor="end">%</text>
+</g>
+<g fill="#C98F00" transform="translate(-5 -5)">
+<text x="64" y="132" font-size="34">до</text>
+<text x="338" y="132" font-size="128" text-anchor="end" letter-spacing="-4">50</text>
+<text x="394" y="78" font-size="50" text-anchor="end">%</text>
+</g>
+<g fill="url(#t2goldNum)" transform="translate(-7 -7)" filter="url(#t2glow)">
+<text x="64" y="132" font-size="34">до</text>
+<text x="338" y="132" font-size="128" text-anchor="end" letter-spacing="-4">50</text>
+<text x="394" y="78" font-size="50" text-anchor="end">%</text>
+</g>
+</g>
+<use href="#t2spark" x="140" y="30"/><use href="#t2spark" x="392" y="20" opacity=".7"/>
+</svg>
+</div>
 </div>
 
 <div class="t2-b t2-b-swap">
@@ -343,23 +428,46 @@ html.dark .t2-b-mgr p { color: #B7BDC6; }
 <p>Без свопов за перенос позиций через ночь. <a href="trading/islamic.html">Подробнее о счёте →</a></p>
 </div>
 <div class="art" aria-hidden="true">
-<div class="t2-badge">SWAP<br>FREE</div>
-<div class="t2-mini"><svg viewBox="0 0 92 92" width="92" height="92"><path d="M0 78 L14 70 L24 74 L38 56 L50 60 L64 38 L76 42 L92 16" fill="none" stroke="#0ECB81" stroke-width="3" stroke-linejoin="round"/><path d="M0 78 L14 70 L24 74 L38 56 L50 60 L64 38 L76 42 L92 16 L92 92 L0 92Z" fill="#0ECB81" opacity=".15"/></svg></div>
+<svg class="t2-art" viewBox="0 0 270 220" width="270" height="220">
+<ellipse cx="150" cy="200" rx="100" ry="12" fill="#000" opacity=".2"/>
+<g filter="url(#t2sh)">
+<rect x="128" y="74" width="122" height="122" rx="22" fill="#05070A"/>
+<rect x="120" y="66" width="122" height="122" rx="22" fill="url(#t2dark)"/>
+<rect x="120.5" y="66.5" width="121" height="121" rx="21.5" fill="none" stroke="#fff" stroke-opacity=".1"/>
+<path d="M134 150h100M134 126h100M134 102h100" stroke="#fff" stroke-opacity=".05"/>
+<path d="M134 168 L152 156 L166 162 L184 138 L198 144 L214 116 L228 96" fill="none" stroke="#0ECB81" stroke-width="3.4" stroke-linejoin="round" stroke-linecap="round" filter="url(#t2glow)"/>
+<path d="M134 168 L152 156 L166 162 L184 138 L198 144 L214 116 L228 96 L228 178 L134 178Z" fill="url(#t2green)"/>
+<circle cx="228" cy="96" r="5" fill="#0ECB81"/><circle cx="228" cy="96" r="10" fill="#0ECB81" opacity=".25"/>
+</g>
+<g transform="rotate(-9 82 96)" filter="url(#t2sh)">
+<rect x="26" y="50" width="122" height="122" rx="28" fill="#8F6200"/>
+<rect x="20" y="40" width="122" height="122" rx="28" fill="url(#t2goldFace)"/>
+<rect x="28" y="48" width="106" height="106" rx="22" fill="none" stroke="#fff" stroke-opacity=".45" stroke-width="1.5"/>
+<path d="M48 40h66a28 28 0 0 1 28 28v6c-38 16-84 16-122 0v-6a28 28 0 0 1 28-28z" fill="url(#t2gloss)" opacity=".75"/>
+<text x="81" y="96" text-anchor="middle" font-family="Unbounded, sans-serif" font-weight="800" font-size="25" fill="#181A20">SWAP</text>
+<text x="81" y="124" text-anchor="middle" font-family="Unbounded, sans-serif" font-weight="800" font-size="25" fill="#181A20">FREE</text>
+</g>
+<use href="#t2spark" x="20" y="32"/><use href="#t2spark" x="160" y="44" opacity=".7"/>
+</svg>
 </div>
 </div>
 
 <div class="t2-b t2-b-mgr">
-<svg class="t2-chart" viewBox="0 0 300 260" preserveAspectRatio="none" aria-hidden="true">
-<g stroke="#848E9C" stroke-width="1.4" opacity=".55">
-<path d="M20 200v30M44 190v34M68 205v26M92 180v34M116 170v30M140 150v34M164 160v28M188 130v34M212 110v30M236 90v34M260 70v30M284 40v34"/>
+<svg class="t2-chart" viewBox="0 0 320 270" preserveAspectRatio="none" aria-hidden="true">
+<path d="M10 240 C80 232 120 210 170 180 S260 100 320 50" fill="none" stroke="#F0B90B" stroke-width="2.5" filter="url(#t2glow)"/>
+<g stroke-width="1.6">
+<path d="M28 206v40M58 196v40M88 212v30M118 182v40M148 170v36M178 150v38M208 160v32M238 122v40M268 98v38M298 64v40" stroke="#848E9C" stroke-opacity=".6"/>
 </g>
-<g>
-<rect x="16" y="206" width="8" height="18" fill="#F6465D"/><rect x="40" y="196" width="8" height="20" fill="#0ECB81"/><rect x="64" y="210" width="8" height="14" fill="#F6465D"/>
-<rect x="88" y="186" width="8" height="22" fill="#0ECB81"/><rect x="112" y="176" width="8" height="18" fill="#0ECB81"/><rect x="136" y="156" width="8" height="22" fill="#0ECB81"/>
-<rect x="160" y="166" width="8" height="16" fill="#F6465D"/><rect x="184" y="136" width="8" height="22" fill="#0ECB81"/><rect x="208" y="116" width="8" height="18" fill="#0ECB81"/>
-<rect x="232" y="96" width="8" height="22" fill="#0ECB81"/><rect x="256" y="76" width="8" height="18" fill="#0ECB81"/><rect x="280" y="46" width="8" height="22" fill="#0ECB81"/>
-</g>
-<path d="M0 222 C60 214 100 196 150 172 S240 104 300 60" fill="none" stroke="#F0B90B" stroke-width="2"/>
+<rect x="22" y="214" width="12" height="22" rx="2" fill="url(#t2cDn)"/>
+<rect x="52" y="202" width="12" height="26" rx="2" fill="url(#t2cUp)"/>
+<rect x="82" y="218" width="12" height="16" rx="2" fill="url(#t2cDn)"/>
+<rect x="112" y="188" width="12" height="28" rx="2" fill="url(#t2cUp)"/>
+<rect x="142" y="176" width="12" height="24" rx="2" fill="url(#t2cUp)"/>
+<rect x="172" y="156" width="12" height="28" rx="2" fill="url(#t2cUp)"/>
+<rect x="202" y="166" width="12" height="20" rx="2" fill="url(#t2cDn)"/>
+<rect x="232" y="128" width="12" height="28" rx="2" fill="url(#t2cUp)"/>
+<rect x="262" y="104" width="12" height="26" rx="2" fill="url(#t2cUp)"/>
+<rect x="292" y="70" width="12" height="30" rx="2" fill="url(#t2cUp)"/>
 </svg>
 <div>
 <h3>Персональный менеджер и аналитика</h3>
@@ -368,9 +476,10 @@ html.dark .t2-b-mgr p { color: #B7BDC6; }
 <div class="art" aria-hidden="true">
 <div class="t2-mcard">
 <span class="mail"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
-<div class="ava"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+<div class="ava"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg><i class="on"></i></div>
 <b>Personal Manager</b>
 <i>на связи в личном кабинете</i>
+<div class="tip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Разбор рынка</div>
 </div>
 </div>
 </div>
