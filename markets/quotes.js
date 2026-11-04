@@ -34,8 +34,9 @@
       if (c.getAttribute('data-sym') !== sym) return;
       var p = c.querySelector('[data-f="bid"]');
       p.textContent = bid;
-      c.querySelector('[data-f="ask"]').textContent = ask;
-      c.querySelector('[data-f="spread"]').textContent = spreadText(sym, bid, ask);
+      var a = c.querySelector('[data-f="ask"]'), s = c.querySelector('[data-f="spread"]');
+      if (a) a.textContent = ask;
+      if (s) s.textContent = spreadText(sym, bid, ask);
       if (prev != null && prev !== last[sym]) {
         p.classList.remove('up', 'down');
         void p.offsetWidth;
