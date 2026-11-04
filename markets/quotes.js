@@ -41,6 +41,8 @@
         p.classList.remove('up', 'down');
         void p.offsetWidth;
         p.classList.add(last[sym] > prev ? 'up' : 'down');
+        clearTimeout(p._t);
+        p._t = setTimeout(function () { p.classList.remove('up', 'down'); }, 900);
       }
     });
   }
