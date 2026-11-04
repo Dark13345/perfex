@@ -276,6 +276,7 @@ th { background: var(--card-hover); font-weight: 600; }
 /* Footer — фиксированно тёмный в обеих темах (Binance-style) */
 footer.site { background: #181A20; color: #B7BDC6; padding: 50px 0 24px; margin-top: 40px; }
 footer.site .grid { grid-template-columns: 1.2fr 1fr 1fr 1fr; gap: 32px; margin-bottom: 32px; }
+footer.site .logo { color: #fff; }
 footer.site h4 { color: #fff; font-size: 14px; margin-bottom: 12px; text-transform: uppercase; letter-spacing: .5px; }
 footer.site ul { list-style: none; }
 footer.site ul li { margin-bottom: 8px; }
