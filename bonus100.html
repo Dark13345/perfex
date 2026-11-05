@@ -25,6 +25,15 @@
 /* блоки сайта с max-width прижаты влево — на этой странице центрируем их */
 .promo .faq, .promo .faq-item p, .promo .spec-note,
 .promo .cb-points, .promo .acc-table { margin-left: auto; margin-right: auto; }
+/* вопросы-раскрывашки: заголовок по центру, знак + прижат вправо */
+.promo .faq-acc summary { justify-content: center; position: relative; padding-left: 48px; padding-right: 48px; }
+.promo .faq-acc summary::after { position: absolute; right: 0; top: 50%; transform: translateY(-50%); }
+.promo .faq-acc .faq-body { padding: 0 0 22px; }
+.promo .faq-acc .faq-body p { max-width: 760px; margin: 0 auto; }
+@media (max-width: 520px){
+  .promo .faq-acc summary { padding-left: 36px; padding-right: 36px; }
+  .promo .faq-acc summary::after { width: 28px; height: 28px; font-size: 19px; }
+}
 .promo-tag { display: block; width: fit-content; margin: 0 auto 14px; padding: 6px 14px; border-radius: 999px;
   font-size: 13px; font-weight: 600; letter-spacing: .02em;
   color: var(--accent-text); background: rgba(240,185,11,.14); }
@@ -198,27 +207,27 @@
 <section class="features">
 <div class="wrap">
 <h2>Частые вопросы</h2>
-<div class="faq">
-<div class="faq-item">
-<h3>Бонус дают только на первое пополнение?</h3>
-<p>Нет. Запросить бонус можно при каждом новом пополнении счёта.</p>
-</div>
-<div class="faq-item">
-<h3>С какой суммы доступен бонус?</h3>
-<p>От $10. Размер считается от суммы пополнения и доходит до 100%.</p>
-</div>
-<div class="faq-item">
-<h3>Прибыль с бонусных средств можно вывести?</h3>
-<p>Да. Заработанное выводится со счёта без дополнительных условий.</p>
-</div>
-<div class="faq-item">
-<h3>Бонус начисляется автоматически?</h3>
-<p>Нет. После пополнения напишите персональному менеджеру или в поддержку — бонус добавят на счёт.</p>
-</div>
-<div class="faq-item">
-<h3>Меняются ли торговые условия с бонусом?</h3>
-<p>Нет. Спред, комиссия, плечо и исполнение остаются такими же, как на вашем типе счёта.</p>
-</div>
+<div class="faq faq-acc">
+<details class="faq-item">
+<summary><h3>Бонус дают только на первое пополнение?</h3></summary>
+<div class="faq-body"><p>Нет. Запросить бонус можно при каждом новом пополнении счёта.</p></div>
+</details>
+<details class="faq-item">
+<summary><h3>С какой суммы доступен бонус?</h3></summary>
+<div class="faq-body"><p>От $10. Размер считается от суммы пополнения и доходит до 100%.</p></div>
+</details>
+<details class="faq-item">
+<summary><h3>Прибыль с бонусных средств можно вывести?</h3></summary>
+<div class="faq-body"><p>Да. Заработанное выводится со счёта без дополнительных условий.</p></div>
+</details>
+<details class="faq-item">
+<summary><h3>Бонус начисляется автоматически?</h3></summary>
+<div class="faq-body"><p>Нет. После пополнения напишите персональному менеджеру или в поддержку — бонус добавят на счёт.</p></div>
+</details>
+<details class="faq-item">
+<summary><h3>Меняются ли торговые условия с бонусом?</h3></summary>
+<div class="faq-body"><p>Нет. Спред, комиссия, плечо и исполнение остаются такими же, как на вашем типе счёта.</p></div>
+</details>
 </div>
 </div>
 </section>
