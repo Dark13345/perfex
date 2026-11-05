@@ -22,7 +22,10 @@
   width: 7px; height: 7px; margin-top: -3px; border-radius: 50%; background: var(--accent-text); }
 .promo .acc-table th, .promo .acc-table td { text-align: center; }
 .promo-act { margin: 24px auto 0; }
-.promo-tag { display: inline-block; margin-bottom: 14px; padding: 6px 14px; border-radius: 999px;
+/* блоки сайта с max-width прижаты влево — на этой странице центрируем их */
+.promo .faq, .promo .faq-item p, .promo .spec-note,
+.promo .cb-points, .promo .acc-table { margin-left: auto; margin-right: auto; }
+.promo-tag { display: block; width: fit-content; margin: 0 auto 14px; padding: 6px 14px; border-radius: 999px;
   font-size: 13px; font-weight: 600; letter-spacing: .02em;
   color: var(--accent-text); background: rgba(240,185,11,.14); }
 .promo-note { margin-top: 14px; font-size: 13px; opacity: .7; }
