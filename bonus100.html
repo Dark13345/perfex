@@ -43,6 +43,84 @@
   .promo .acc-table { min-width: 0; width: 100%; }
   .promo .acc-table th, .promo .acc-table td { padding: 10px 6px; font-size: 13px; white-space: normal; }
 }
+
+/* ---- объёмный ползунок ---- */
+.bw-slider { text-align: center; max-width: 600px; margin: 32px auto 0;
+  padding: 30px 30px 26px; border-radius: 24px;
+  background: linear-gradient(180deg, var(--card), var(--bg-soft));
+  border: 1px solid var(--border);
+  box-shadow: 0 18px 40px rgba(0,0,0,.20), 0 2px 6px rgba(0,0,0,.10),
+              inset 0 1px 0 rgba(255,255,255,.35); }
+.bw-sum { font-size: 15px; color: var(--text-2); margin: 0; }
+.bw-sum b { font-size: 34px; color: var(--text); margin-left: 10px;
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 1px 0 rgba(255,255,255,.28), 0 2px 4px rgba(0,0,0,.13); }
+
+/* сам ползунок */
+.bw-slider input[type=range] { -webkit-appearance: none; appearance: none;
+  width: 100%; margin: 20px 0 4px; background: transparent; height: 34px; cursor: pointer; }
+.bw-slider input[type=range]:focus { outline: none; }
+.bw-slider input[type=range]::-webkit-slider-runnable-track {
+  height: 18px; border-radius: 999px;
+  background-color: rgba(0,0,0,.20);
+  background-image:
+    linear-gradient(180deg, rgba(255,255,255,.26), rgba(255,255,255,0) 58%),
+    linear-gradient(90deg, #FFD54A 0 var(--p,50%), rgba(0,0,0,0) var(--p,50%));
+  box-shadow: inset 0 3px 6px rgba(0,0,0,.48), inset 0 -1px 0 rgba(255,255,255,.16),
+              0 1px 0 rgba(255,255,255,.28); }
+.bw-slider input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none;
+  width: 32px; height: 32px; margin-top: -7px; border-radius: 50%;
+  border: 1px solid rgba(0,0,0,.42);
+  background:
+    radial-gradient(circle at 32% 26%, #ffffff 0 9%, rgba(255,255,255,.62) 20%, rgba(255,255,255,0) 48%),
+    linear-gradient(180deg, #FFE98F 0%, #F0B90B 48%, #AD8104 100%);
+  box-shadow: 0 5px 10px rgba(0,0,0,.42), 0 2px 3px rgba(0,0,0,.26),
+              inset 0 1px 0 rgba(255,255,255,.65), inset 0 -3px 6px rgba(0,0,0,.30);
+  transition: transform .12s, box-shadow .12s; }
+.bw-slider input[type=range]:active::-webkit-slider-thumb { transform: scale(.93);
+  box-shadow: 0 2px 5px rgba(0,0,0,.45), inset 0 2px 5px rgba(0,0,0,.35),
+              inset 0 -1px 0 rgba(255,255,255,.35); }
+.bw-slider input[type=range]::-moz-range-track { height: 18px; border-radius: 999px;
+  background: rgba(0,0,0,.20);
+  box-shadow: inset 0 3px 6px rgba(0,0,0,.48), 0 1px 0 rgba(255,255,255,.28); }
+.bw-slider input[type=range]::-moz-range-progress { height: 18px; border-radius: 999px;
+  background: linear-gradient(180deg, #FFE27A, #E0A800);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.5); }
+.bw-slider input[type=range]::-moz-range-thumb { width: 30px; height: 30px; border-radius: 50%;
+  border: 1px solid rgba(0,0,0,.42);
+  background: radial-gradient(circle at 32% 26%, #ffffff 0 9%, rgba(255,255,255,.6) 20%, rgba(255,255,255,0) 48%),
+    linear-gradient(180deg, #FFE98F 0%, #F0B90B 48%, #AD8104 100%);
+  box-shadow: 0 5px 10px rgba(0,0,0,.42), inset 0 1px 0 rgba(255,255,255,.65); }
+.bw-ticks { display: flex; justify-content: space-between; margin: 2px 2px 0;
+  font-size: 11px; color: var(--text-2); opacity: .75; }
+
+/* объёмные полосы */
+.bw-track { margin-top: 24px; }
+.bw-trow { margin-bottom: 16px; }
+.bw-trow > span { display: block; text-align: center; font-size: 13px; color: var(--text-2); margin-bottom: 7px; }
+.bw-line2 { height: 20px; border-radius: 999px; overflow: hidden;
+  background: linear-gradient(180deg, rgba(0,0,0,.24), rgba(0,0,0,.07));
+  box-shadow: inset 0 3px 6px rgba(0,0,0,.46), inset 0 -1px 0 rgba(255,255,255,.14),
+              0 1px 0 rgba(255,255,255,.24); }
+.bw-line2 i { position: relative; display: block; height: 100%; border-radius: 999px;
+  transition: width .25s cubic-bezier(.22,1,.36,1);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.5), inset 0 -4px 7px rgba(0,0,0,.32); }
+.bw-line2 i::after { content: ''; position: absolute; left: 4px; right: 4px; top: 2px; height: 36%;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(255,255,255,.42), rgba(255,255,255,0)); }
+.bw-line2 .f1 { background: linear-gradient(180deg, #51575f, #1b1e23); }
+.bw-line2 .f2 { background: linear-gradient(180deg, #FFDC63, #D79C00); }
+
+.bw-res { margin-top: 22px; padding-top: 20px; border-top: 1px solid var(--border);
+  font-size: 15px; color: var(--text-2); }
+.bw-res b { display: block; font-size: 40px; color: var(--accent-text); margin-top: 6px;
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 1px 0 rgba(255,255,255,.32), 0 3px 7px rgba(0,0,0,.16); }
+@media (max-width: 480px){
+  .bw-slider { padding: 24px 18px 20px; }
+  .bw-sum b { font-size: 28px; }
+  .bw-res b { font-size: 34px; }
+}
 </style>
 </head>
 <body>
@@ -153,16 +231,32 @@
 <section>
 <div class="wrap">
 <h2>Сколько получится</h2>
-<div class="spec-scroll"><table class="acc-table">
-<tr><th>Пополнение</th><th>Бонус</th><th>Средств на счёте</th></tr>
-<tr><td>$100</td><td>+$100</td><td>$200</td></tr>
-<tr><td>$500</td><td>+$500</td><td>$1 000</td></tr>
-<tr><td>$1 000</td><td>+$1 000</td><td>$2 000</td></tr>
-<tr><td>$5 000</td><td>+$5 000</td><td>$10 000</td></tr>
-</table></div>
-<p class="spec-note">В таблице показан максимальный размер бонуса — 100%. Точный процент для вашего счёта подтверждает персональный менеджер.</p>
+<div class="bw-slider">
+<p class="bw-sum">Пополнение<b id="bwVal">$1 000</b></p>
+<input type="range" id="bwRange" min="0" max="8" step="1" value="5" aria-label="Сумма пополнения">
+<div class="bw-ticks"><span>$10</span><span>$500</span><span>$10 000</span></div>
+<div class="bw-track">
+<div class="bw-trow"><span>ваши средства</span><div class="bw-line2"><i class="f1" id="bwF1"></i></div></div>
+<div class="bw-trow"><span>бонус PERF<span class="ex">EX</span></span><div class="bw-line2"><i class="f2" id="bwF2"></i></div></div>
+</div>
+<p class="bw-res">Доступно для торговли<b id="bwTot">$2 000</b></p>
+</div>
+<p class="spec-note">Показан максимальный размер бонуса — 100%. Точный процент для вашего счёта подтверждает персональный менеджер.</p>
 </div>
 </section>
+
+<script>
+(function(){var S=[10,50,100,250,500,1000,2500,5000,10000],r=document.getElementById('bwRange');
+if(!r)return;
+function f(n){return '$'+String(n).replace(/\B(?=(\d{3})+(?!\d))/g,' ');}
+function upd(){var v=S[+r.value],p=Math.max(Math.round(v/S[S.length-1]*100),3);
+document.getElementById('bwVal').textContent=f(v);
+document.getElementById('bwTot').textContent=f(v*2);
+document.getElementById('bwF1').style.width=p+'%';
+document.getElementById('bwF2').style.width=p+'%';
+r.style.setProperty('--p',(+r.value/(S.length-1)*100)+'%');}
+r.addEventListener('input',upd);upd();})();
+</script>
 
 <section class="features">
 <div class="wrap">
