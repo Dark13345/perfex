@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Вариант 6: Тумблер — PERFEX</title>
+<link rel="stylesheet" href="styles.css?v=20261104b">
+<script>if(localStorage.getItem('theme')==='dark')document.documentElement.classList.add('dark');</script>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" href="favicon.png">
+<style>
+/* страница акции: весь текст по центру */
+.promo h1, .promo h2, .promo h3, .promo h4,
+.promo p, .promo li, .promo .card, .promo .faq-item,
+.promo th, .promo td, .promo .lead, .promo .spec-note { text-align: center; }
+.promo .wrap > p, .promo .lead { margin-left: auto; margin-right: auto; max-width: 720px; }
+.promo .cb-points { display: flex; flex-wrap: wrap; gap: 10px 28px; justify-content: center;
+  list-style: none; padding: 0; margin: 18px auto 0; max-width: 820px; }
+.promo .cb-points li { position: relative; padding-left: 18px; }
+.promo .cb-points li::before { content: ""; position: absolute; left: 0; top: 50%;
+  width: 7px; height: 7px; margin-top: -3px; border-radius: 50%; background: var(--accent-text); }
+.promo .acc-table th, .promo .acc-table td { text-align: center; }
+.promo-act { margin: 24px auto 0; }
+/* блоки сайта с max-width прижаты влево — на этой странице центрируем их */
+.promo .faq, .promo .faq-item p, .promo .spec-note,
+.promo .cb-points, .promo .acc-table { margin-left: auto; margin-right: auto; }
+/* вопросы-раскрывашки: заголовок по центру, знак + прижат вправо */
+.promo .faq-acc summary { justify-content: center; position: relative; padding-left: 48px; padding-right: 48px; }
+.promo .faq-acc summary::after { position: absolute; right: 0; top: 50%; transform: translateY(-50%); }
+.promo .faq-acc .faq-body { padding: 0 0 22px; }
+.promo .faq-acc .faq-body p { max-width: 760px; margin: 0 auto; }
+@media (max-width: 520px){
+  .promo .faq-acc summary { padding-left: 36px; padding-right: 36px; }
+  .promo .faq-acc summary::after { width: 28px; height: 28px; font-size: 19px; }
+}
+.promo-tag { display: block; width: fit-content; margin: 0 auto 14px; padding: 6px 14px; border-radius: 999px;
+  font-size: 13px; font-weight: 600; letter-spacing: .02em;
+  color: var(--accent-text); background: rgba(240,185,11,.14); }
+.promo-note { margin-top: 14px; font-size: 13px; opacity: .7; }
+@media (max-width: 700px){
+  /* таблицы акции целиком влезают в экран телефона, без прокрутки вбок */
+  .promo .acc-table { min-width: 0; width: 100%; }
+  .promo .acc-table th, .promo .acc-table td { padding: 10px 6px; font-size: 13px; white-space: normal; }
+}
+
+.bw-tg { margin: 32px auto 0; max-width: 500px; }
+.bw-tg-btns { display: inline-flex; padding: 4px; border-radius: 999px; background: var(--bg-soft);
+  border: 1px solid var(--border); }
+.bw-tg-btns button { border: 0; cursor: pointer; padding: 10px 22px; border-radius: 999px; font: inherit;
+  font-size: 14px; font-weight: 600; background: transparent; color: var(--text-2);
+  transition: background .2s, color .2s; }
+.bw-tg-btns button.on { background: var(--accent); color: #181A20; }
+.bw-card { text-align: center; margin-top: 24px; background: var(--card); border: 1px solid var(--border);
+  border-radius: 20px; padding: 30px 24px; }
+.bw-card span { font-size: 14px; color: var(--text-2); }
+.bw-card b { display: block; font-size: 46px; margin-top: 8px; font-variant-numeric: tabular-nums;
+  transition: color .25s; }
+.bw-card.plus b { color: var(--accent-text); }
+.bw-card p { margin: 14px 0 0; font-size: 14px; color: var(--text-2); min-height: 20px; }
+</style>
+</head>
+<body>
+<header class="site">
+<div class="wrap nav">
+<a href="index.html" class="logo">PERF<span class="ex">EX</span></a>
+<nav class="main"><ul>
+
+<li class="mega cols-3"><a href="trading/index.html">Торговля</a>
+<div class="megapanel">
+<div class="mega-col"><h5>Условия торговли</h5><ul>
+<li><a href="trading/cashback.html">Spreadback</a></li>
+<li><a href="trading/cfd-spec.html">Спецификация контрактов</a></li>
+</ul></div>
+<div class="mega-col"><h5>Счета</h5><ul>
+<li><a href="trading/accounts.html#standard">Standard</a></li>
+<li><a href="trading/accounts.html#zero">Zero</a></li>
+<li><a href="products/demo.html">Demo</a></li>
+<li><a href="trading/islamic.html">Islamic (Swap-Free)</a></li>
+</ul></div>
+<div class="mega-col"><h5>Платформы</h5><ul>
+<li><a href="trading/platforms.html">MetaTrader 4</a></li>
+</ul>
+<h5 style="margin-top:18px;">Финансы</h5><ul>
+<li><a href="trading/deposits.html">Пополнение</a></li>
+<li><a href="trading/withdrawal.html">Вывод средств</a></li>
+</ul></div>
+</div></li>
+
+<li><a href="markets/index.html">Рынки</a><ul>
+<li><a href="markets/forex.html">Forex</a></li>
+<li><a href="markets/metals.html">Металлы</a></li>
+<li><a href="markets/indices.html">Индексы</a></li>
+<li><a href="markets/crypto.html">Криптовалюты</a></li>
+<li><a href="markets/energies.html">Энергоносители</a></li>
+<li><a href="markets/commodities.html">Сырьё</a></li>
+</ul></li>
+
+<li><a href="partnership/index.html">Партнёрство</a></li>
+
+<li><a href="promos.html">Акции</a><ul><li><a href="https://dark13345.github.io/perfex/bonus100.html">Бонус на депозит до 100%</a></li><li><a href="transfer-account.html">Переход от другого брокера</a></li></ul></li>
+
+<li><a href="company/about.html">Компания</a><ul>
+<li><a href="company/about.html">О компании</a></li>
+<li><a href="company/documents.html">Документы</a></li>
+</ul></li>
+
+</ul></nav>
+<div class="lang-switch">
+<button class="lang-btn" aria-label="Язык" type="button">
+<span class="lang-flag">🇷🇺</span><span class="lang-code">RU</span>
+<svg width="10" height="10" viewBox="0 0 10 10"><path d="M1 3 L5 7 L9 3" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+<ul class="lang-menu">
+<li data-flag="🇷🇺" data-code="RU"><span class="lang-flag">🇷🇺</span>Русский<span class="lang-code">RU</span></li>
+<li data-flag="🇬🇧" data-code="EN"><span class="lang-flag">🇬🇧</span>English<span class="lang-code">EN</span></li>
+<li data-flag="🇦🇪" data-code="AR"><span class="lang-flag">🇦🇪</span>العربية<span class="lang-code">AR</span></li>
+<li data-flag="🇻🇳" data-code="VT"><span class="lang-flag">🇻🇳</span>Tiếng Việt<span class="lang-code">VT</span></li>
+</ul>
+</div>
+<button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
+<svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+<svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+</button>
+<a href="#" class="cta ghost">Вход</a>
+<a href="#" class="cta">Регистрация</a>
+</div>
+</header>
+<main class="promo">
+
+<section class="page" style="padding-bottom: 24px;">
+<div class="wrap">
+<div class="crumbs" style="text-align:center;"><a href="index.html">Главная</a> / <a href="promos.html">Акции</a> / Бонус к пополнению</div>
+<span class="promo-tag">Акция PERF<span class="ex">EX</span></span>
+<h1>Бонус <span class="hl">до 100%</span> на каждое пополнение</h1>
+<p class="lead">Бонусные средства поступают на торговый счёт вместе с вашими: увеличивают доступную маржу и дают запас при просадках.</p>
+<ul class="cb-points">
+<li>От $10 — порог низкий</li>
+<li>На первое и на каждое следующее пополнение</li>
+<li>Прибыль выводится без условий</li>
+</ul>
+<p class="promo-act"><a href="#" class="cta">Получить бонус</a></p>
+<p class="promo-note">Бонус начисляет персональный менеджер после зачисления средств</p>
+</div>
+</section>
+
+<section class="features">
+<div class="wrap">
+<h2>Что бонус меняет в торговле</h2>
+<p class="lead">Это не подарок на отдельном счёте, а рабочие средства, которые участвуют в сделках наравне с вашими.</p>
+<div class="grid cols-3">
+<div class="card">
+<h3>Больше свободной маржи</h3>
+<p>Средств на счёте становится больше, поэтому можно держать несколько позиций одновременно или брать больший объём на одной.</p>
+</div>
+<div class="card">
+<h3>Запас при просадке</h3>
+<p>Принудительное закрытие наступает позже: у рынка остаётся больше места на разворот, а у вас — времени на решение.</p>
+</div>
+<div class="card">
+<h3>Прибыль остаётся вашей</h3>
+<p>Заработанное на бонусных средствах выводится со счёта без дополнительных условий.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<h2>Сколько получится</h2>
+<div class="bw-tg">
+<div class="bw-tg-btns" role="group">
+<button type="button" id="bwOff">Без бонуса</button>
+<button type="button" id="bwOn" class="on">С бонусом</button>
+</div>
+<div class="bw-card plus" id="bwCard">
+<span>Пополнили $1 000 — торгуете на</span>
+<b id="bwNum">$2 000</b>
+<p id="bwSub">включая $1 000 бонуса от PERF<span class="ex">EX</span></p>
+</div>
+</div>
+<p class="spec-note">Показан максимальный размер бонуса — 100%. Точный процент для вашего счёта подтверждает персональный менеджер.</p>
+</div>
+</section>
+
+<script>
+(function(){var on=document.getElementById('bwOn'),off=document.getElementById('bwOff'),
+c=document.getElementById('bwCard'),n=document.getElementById('bwNum'),s=document.getElementById('bwSub');
+if(!on)return;
+function set(b){on.classList.toggle('on',b);off.classList.toggle('on',!b);
+c.classList.toggle('plus',b);n.textContent=b?'$2 000':'$1 000';
+s.innerHTML=b?'включая $1 000 бонуса от PERF<span class="ex">EX</span>':'только собственные средства';}
+on.addEventListener('click',function(){set(true);});
+off.addEventListener('click',function(){set(false);});})();
+</script>
+
+<section class="features">
+<div class="wrap">
+<h2>Условия акции</h2>
+<div class="spec-scroll"><table class="acc-table">
+<tr><th>Параметр</th><th>Значение</th></tr>
+<tr><td>Размер бонуса</td><td>до 100% от суммы пополнения</td></tr>
+<tr><td>Минимальное пополнение</td><td>от $10</td></tr>
+<tr><td>На какие пополнения</td><td>первое и все последующие</td></tr>
+<tr><td>Типы счетов</td><td>Standard, Zero</td></tr>
+<tr><td>Участие в торговле</td><td>наравне с собственными средствами</td></tr>
+<tr><td>Вывод прибыли</td><td>без ограничений</td></tr>
+<tr><td>Начисление</td><td>по запросу персональному менеджеру</td></tr>
+</table></div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<h2>Как получить</h2>
+<div class="grid cols-3">
+<div class="card">
+<span class="tag">Шаг 1</span>
+<h3>Внесите средства</h3>
+<p>Любым способом из раздела «Пополнение»: карты, банковский перевод, кошельки или криптовалюты. Комиссии со стороны PERF<span class="ex">EX</span> нет.</p>
+</div>
+<div class="card">
+<span class="tag">Шаг 2</span>
+<h3>Запросите бонус</h3>
+<p>Напишите персональному менеджеру или в поддержку сразу после того, как средства зачислены на счёт.</p>
+</div>
+<div class="card">
+<span class="tag">Шаг 3</span>
+<h3>Торгуйте с запасом</h3>
+<p>Бонус появится на балансе и будет работать вместе с вашими средствами — на тех же условиях и инструментах.</p>
+</div>
+</div>
+<p class="promo-act"><a href="#" class="cta">Получить бонус</a></p>
+</div>
+</section>
+
+<section class="features">
+<div class="wrap">
+<h2>Частые вопросы</h2>
+<div class="faq faq-acc">
+<details class="faq-item">
+<summary><h3>Бонус дают только на первое пополнение?</h3></summary>
+<div class="faq-body"><p>Нет. Запросить бонус можно при каждом новом пополнении счёта.</p></div>
+</details>
+<details class="faq-item">
+<summary><h3>С какой суммы доступен бонус?</h3></summary>
+<div class="faq-body"><p>От $10. Размер считается от суммы пополнения и доходит до 100%.</p></div>
+</details>
+<details class="faq-item">
+<summary><h3>Прибыль с бонусных средств можно вывести?</h3></summary>
+<div class="faq-body"><p>Да. Заработанное выводится со счёта без дополнительных условий.</p></div>
+</details>
+<details class="faq-item">
+<summary><h3>Бонус начисляется автоматически?</h3></summary>
+<div class="faq-body"><p>Нет. После пополнения напишите персональному менеджеру или в поддержку — бонус добавят на счёт.</p></div>
+</details>
+<details class="faq-item">
+<summary><h3>Меняются ли торговые условия с бонусом?</h3></summary>
+<div class="faq-body"><p>Нет. Спред, комиссия, плечо и исполнение остаются такими же, как на вашем типе счёта.</p></div>
+</details>
+</div>
+</div>
+</section>
+
+<section class="cta-banner">
+<div class="wrap">
+<h2>Получите бонус к следующему пополнению</h2>
+<div class="btns">
+<a href="#" class="btn primary">Получить бонус</a>
+</div>
+</div>
+</section>
+
+</main>
+<footer class="site">
+<div class="wrap">
+<div class="grid">
+<div><div class="logo" style="margin-bottom:14px;">PERF<span class="ex">EX</span></div><p style="font-size:13px;">Perfect Execution. Forex и CFD брокер с фокусом на исполнение сделок и честные условия.</p></div>
+<div><h4>Торговля</h4><ul><li><a href="trading/accounts.html">Типы счетов</a></li><li><a href="trading/conditions.html">Условия</a></li><li><a href="trading/platforms.html">Платформы</a></li><li><a href="trading/deposits.html">Пополнение и вывод</a></li></ul></div>
+<div><h4>Компания</h4><ul><li><a href="company/about.html">О нас</a></li><li><a href="company/about.html#regulation">Безопасность</a></li><li><a href="company/documents.html">Документы</a></li><li><a href="company/about.html#contacts">Контакты</a></li></ul></div>
+<div><h4>Клиентам</h4><ul><li><a href="products/demo.html">Демо-счёт</a></li><li><a href="partnership/index.html">Партнёрство</a></li><li><a href="promos.html">Акции</a></li></ul></div>
+</div>
+<div class="legal">Торговля с кредитным плечом связана с высоким риском. Потери могут превысить первоначальные вложения. Торгуйте только теми средствами, потерю которых вы можете себе позволить.<br>© 2026 PERF<span class="ex">EX</span>.</div>
+</div>
+</footer>
+<script>
+(function(){
+  const tb = document.getElementById('themeToggle');
+  if (tb) tb.addEventListener('click', () => {
+    const isDark = document.documentElement.classList.toggle('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  });
+  const lb = document.querySelector('.lang-btn');
+  const lm = document.querySelector('.lang-menu');
+  if (lb && lm) {
+    const fe = lb.querySelector('.lang-flag');
+    const ce = lb.querySelector('.lang-code');
+    const saved = localStorage.getItem('lang');
+    if (saved) { try { const d = JSON.parse(saved); fe.textContent = d.flag; ce.textContent = d.code; } catch(e){} }
+    lb.addEventListener('click', (e) => { e.stopPropagation(); lm.classList.toggle('open'); });
+    lm.querySelectorAll('li').forEach(li => {
+      li.addEventListener('click', () => {
+        const flag = li.dataset.flag, code = li.dataset.code;
+        fe.textContent = flag; ce.textContent = code;
+        localStorage.setItem('lang', JSON.stringify({flag, code}));
+        lm.classList.remove('open');
+      });
+    });
+    document.addEventListener('click', () => lm.classList.remove('open'));
+  }
+})();
+</script>
+
+</body>
+</html>
