@@ -238,6 +238,17 @@ html.dark .t2-b-mgr p { color: #B7BDC6; }
   .t2-cmp-row > div:nth-child(2), .t2-cmp-row > div:nth-child(3) { border-top: 0; font-size: 14px; padding: 12px 16px 16px; align-items: flex-start; }
   .t2-cmp-row:first-child > div:nth-child(2), .t2-cmp-row:first-child > div:nth-child(3) { padding-top: 16px; font-size: 11px; }
 }
+.t2-rules { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.t2-rules .card { background: var(--card); display: grid; gap: 14px; align-content: start; }
+.t2-rules .card h3 { margin: 0; font-size: 18px; }
+.t2-rules .tr-list li:last-child { margin-bottom: 0; }
+.t2-rules-note { margin: 18px 0 0; font-size: 13px; color: var(--text-3); }
+.t2-why { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.t2-why .card { background: var(--card); display: grid; gap: 8px; align-content: start; }
+.t2-why .card b { font-family: Unbounded, sans-serif; font-weight: 800; font-size: 26px; line-height: 1.1; color: var(--accent-text); }
+.t2-why .card p { margin: 0; }
+@media (max-width: 1000px) { .t2-why { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 700px) { .t2-rules, .t2-why { grid-template-columns: 1fr; } .t2-why .card b { font-size: 22px; } }
 </style>
 
 <div class="t2">
@@ -247,8 +258,8 @@ html.dark .t2-b-mgr p { color: #B7BDC6; }
 <div class="crumbs"><a href="index.html">Главная</a> / <a href="promos.html">Акции</a> / Переход от другого брокера</div>
 <div class="t2-hero-grid">
 <div>
-<h1>Убыток на счёте? <span class="hl">Перенесите его</span> в PERF<span class="ex">EX</span></h1>
-<p class="t2-lead">Позиции переезжают без закрытия, по тем же ценам. Вы получаете средства от брокера на новые сделки и счёт без свопов.</p>
+<h1>Переходите в PERF<span class="ex">EX</span> <span class="hl">со&nbsp;своими сделками</span></h1>
+<p class="t2-lead">Начинать с нуля не придётся. Менеджер восстановит открытые ордера по ценам открытия, а мы добавим до 50% к балансу, который вы переносите.</p>
 <ul class="t2-checks">
 <li>Простой перенос позиций без их закрытия</li>
 <li>До 50% средств от брокера для открытия сделок</li>
@@ -257,7 +268,7 @@ html.dark .t2-b-mgr p { color: #B7BDC6; }
 </ul>
 <div class="t2-btns">
 <a href="#" class="cta">Перенести счёт</a>
-<a href="#how" class="t2-link">Как проходит перенос →</a>
+<a href="#calc" class="t2-link">Посчитать средства →</a>
 </div>
 </div>
 
@@ -286,78 +297,11 @@ html.dark .t2-b-mgr p { color: #B7BDC6; }
 </div>
 </section>
 
-<section class="t2-sec">
-<div class="wrap">
-<div class="t2-head">
-<h2>Кому подойдёт предложение</h2>
-<p>Если узнаёте свою ситуацию хотя бы в одной карточке, перенос счёта поможет</p>
-</div>
-<div class="t2-who">
-<div class="card">
-<svg class="t2-ico3d" viewBox="0 0 72 72" width="64" height="64" aria-hidden="true">
-<defs><linearGradient id="t2i1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF8A98"/><stop offset="1" stop-color="#D42A42"/></linearGradient></defs>
-<ellipse cx="38" cy="66" rx="26" ry="4" fill="#000" opacity=".16"/>
-<rect x="10" y="12" width="54" height="54" rx="16" fill="#9E1C30"/>
-<rect x="6" y="6" width="54" height="54" rx="16" fill="url(#t2i1)"/>
-<path d="M22 6h22a16 16 0 0 1 16 16v2c-16 8-38 8-54 0v-2A16 16 0 0 1 22 6z" fill="url(#t2gloss)" opacity=".55"/>
-<rect x="6.5" y="6.5" width="53" height="53" rx="15.5" fill="none" stroke="#fff" stroke-opacity=".25"/>
-<path d="M16 22l11 11 7-7 14 14" fill="none" stroke="#fff" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M40 41h9v-9" fill="none" stroke="#fff" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-<h3>Счёт в просадке</h3>
-<p>Нет средств для открытия новых позиций</p>
-</div>
-<div class="card">
-<svg class="t2-ico3d" viewBox="0 0 72 72" width="64" height="64" aria-hidden="true">
-<defs><linearGradient id="t2i2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3A414C"/><stop offset="1" stop-color="#0B0E11"/></linearGradient></defs>
-<ellipse cx="38" cy="66" rx="26" ry="4" fill="#000" opacity=".16"/>
-<rect x="10" y="12" width="54" height="54" rx="16" fill="#000"/>
-<rect x="6" y="6" width="54" height="54" rx="16" fill="url(#t2i2)"/>
-<path d="M22 6h22a16 16 0 0 1 16 16v2c-16 8-38 8-54 0v-2A16 16 0 0 1 22 6z" fill="url(#t2gloss)" opacity=".55"/>
-<rect x="6.5" y="6.5" width="53" height="53" rx="15.5" fill="none" stroke="#fff" stroke-opacity=".25"/>
-<g transform="translate(29 40) scale(.42)"><use href="#t2coin"/></g><g transform="translate(27 31) scale(.42)"><use href="#t2coin"/></g><path d="M47 14a8 8 0 1 0 6 12 7 7 0 0 1-6-12z" fill="#FCD535"/><circle cx="47" cy="44" r="8" fill="#F6465D"/><path d="M43 44h8" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/>
-</svg>
-<h3>Свопы «съедают» счёт</h3>
-<p>Каждую ночь за перенос позиций списываются деньги</p>
-</div>
-<div class="card">
-<svg class="t2-ico3d" viewBox="0 0 72 72" width="64" height="64" aria-hidden="true">
-<defs><linearGradient id="t2i3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8A97A8"/><stop offset="1" stop-color="#4B5563"/></linearGradient></defs>
-<ellipse cx="38" cy="66" rx="26" ry="4" fill="#000" opacity=".16"/>
-<rect x="10" y="12" width="54" height="54" rx="16" fill="#2F3742"/>
-<rect x="6" y="6" width="54" height="54" rx="16" fill="url(#t2i3)"/>
-<path d="M22 6h22a16 16 0 0 1 16 16v2c-16 8-38 8-54 0v-2A16 16 0 0 1 22 6z" fill="url(#t2gloss)" opacity=".55"/>
-<rect x="6.5" y="6.5" width="53" height="53" rx="15.5" fill="none" stroke="#fff" stroke-opacity=".25"/>
-<path d="M15 34h36" stroke="#fff" stroke-width="4.2" stroke-linecap="round"/><path d="M15 25h36M15 43h36" stroke="#fff" stroke-opacity=".35" stroke-width="3" stroke-linecap="round"/><circle cx="47" cy="47" r="9" fill="#181A20"/><path d="M44 43v8M50 43v8" stroke="#FCD535" stroke-width="2.6" stroke-linecap="round"/>
-</svg>
-<h3>Стагнация</h3>
-<p>Позиции висят, торговля стоит, выхода из ситуации не видно</p>
-</div>
-<div class="card">
-<svg class="t2-ico3d" viewBox="0 0 72 72" width="64" height="64" aria-hidden="true">
-<defs><linearGradient id="t2i4" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFE27A"/><stop offset="1" stop-color="#F08C0B"/></linearGradient></defs>
-<ellipse cx="38" cy="66" rx="26" ry="4" fill="#000" opacity=".16"/>
-<rect x="10" y="12" width="54" height="54" rx="16" fill="#B76A00"/>
-<rect x="6" y="6" width="54" height="54" rx="16" fill="url(#t2i4)"/>
-<path d="M22 6h22a16 16 0 0 1 16 16v2c-16 8-38 8-54 0v-2A16 16 0 0 1 22 6z" fill="url(#t2gloss)" opacity=".55"/>
-<rect x="6.5" y="6.5" width="53" height="53" rx="15.5" fill="none" stroke="#fff" stroke-opacity=".25"/>
-<path d="M16 42a17 17 0 0 1 34 0" fill="none" stroke="#181A20" stroke-opacity=".25" stroke-width="5" stroke-linecap="round"/>
-<path d="M16 42a17 17 0 0 1 9-15" fill="none" stroke="#0ECB81" stroke-width="5" stroke-linecap="round"/>
-<path d="M27.5 26.2a17 17 0 0 1 11 0" fill="none" stroke="#181A20" stroke-width="5" stroke-linecap="round"/>
-<path d="M33 42l9-11" stroke="#181A20" stroke-width="3.4" stroke-linecap="round"/>
-<circle cx="33" cy="42" r="4.2" fill="#181A20"/><circle cx="33" cy="42" r="1.6" fill="#FCD535"/>
-</svg>
-<h3>Угроза margin call</h3>
-<p>Сильное движение рынка может выбить ваши сделки</p>
-</div>
-</div>
-</div>
-</section>
-
 <section class="t2-sec t2-soft">
 <div class="wrap">
 <div class="t2-head">
-<h2>Что вы получите при переносе счёта</h2>
-<p>Четыре инструмента, чтобы перезапустить торговлю, а не начинать заново</p>
+<h2>Четыре условия перехода</h2>
+<p>Действуют для любого реального счёта, который вы переносите от другого брокера</p>
 </div>
 <div class="t2-bento">
 
@@ -400,8 +344,8 @@ html.dark .t2-b-mgr p { color: #B7BDC6; }
 
 <div class="t2-b t2-b-move">
 <div>
-<h3>Простой перенос позиций без их закрытия</h3>
-<p>Все ордера переносятся по тем же ценам, по которым были открыты. Фиксировать убыток не нужно.</p>
+<h3>Сделки переезжают как есть</h3>
+<p>Прибыльные, убыточные и локированные позиции переносятся без закрытия, по ценам открытия. Фиксировать результат перед уходом не нужно.</p>
 </div>
 <div class="art" aria-hidden="true">
 <svg class="t2-art" viewBox="0 0 270 210" width="270" height="210">
@@ -435,8 +379,8 @@ html.dark .t2-b-mgr p { color: #B7BDC6; }
 
 <div class="t2-b t2-b-funds">
 <div>
-<h3>Средства от брокера для открытия сделок</h3>
-<p>Учитываются на балансе и работают в торговле, в том числе при просадке депозита</p>
+<h3>До 50% к переносимому балансу</h3>
+<p>Средства от брокера зачисляются на торговый счёт и работают в сделках, даже если депозит в просадке</p>
 </div>
 <div class="art" aria-hidden="true">
 <svg class="t2-art t2-art-num" viewBox="0 0 400 160" width="400" height="160">
@@ -471,8 +415,8 @@ html.dark .t2-b-mgr p { color: #B7BDC6; }
 
 <div class="t2-b t2-b-swap">
 <div>
-<h3>Swap Free счёт</h3>
-<p>Без свопов за перенос позиций через ночь. <a href="trading/islamic.html">Подробнее о счёте →</a></p>
+<h3>Счёт без свопов</h3>
+<p>Держите позиции сколько нужно: за перенос через ночь ничего не списывается. <a href="trading/islamic.html">Подробнее о счёте →</a></p>
 </div>
 <div class="art" aria-hidden="true">
 <svg class="t2-art" viewBox="0 0 270 220" width="270" height="220">
@@ -517,8 +461,8 @@ html.dark .t2-b-mgr p { color: #B7BDC6; }
 <rect x="292" y="70" width="12" height="30" rx="2" fill="url(#t2cUp)"/>
 </svg>
 <div>
-<h3>Персональный менеджер и аналитика</h3>
-<p>Подберёт условия, проведёт через перенос и даст рекомендации для дальнейшей торговли</p>
+<h3>Свой менеджер и аналитика</h3>
+<p>Один человек ведёт ваш переход от выписки до первой сделки и присылает разборы рынка</p>
 </div>
 <div class="art" aria-hidden="true">
 <div class="t2-mcard">
@@ -535,11 +479,11 @@ html.dark .t2-b-mgr p { color: #B7BDC6; }
 </div>
 </section>
 
-<section class="t2-sec">
+<section class="t2-sec" id="calc">
 <div class="wrap">
 <div class="t2-head">
-<h2>Сколько средств можно получить</h2>
-<p>Введите баланс счёта, который хотите перенести</p>
+<h2>Посчитайте свои средства</h2>
+<p>Введите баланс, который переносите от другого брокера</p>
 </div>
 <div class="t2-calc">
 <div>
@@ -563,15 +507,15 @@ html.dark .t2-b-mgr p { color: #B7BDC6; }
 <section class="t2-sec t2-soft">
 <div class="wrap">
 <div class="t2-head">
-<h2>Остаться или перенести</h2>
-<p>Что меняется для счёта в просадке после переноса</p>
+<h2>Закрыть позиции или перевезти их</h2>
+<p>Обычный уход от брокера и переход в PERFEX по этому предложению</p>
 </div>
 <div class="t2-cmp">
-<div class="t2-cmp-row"><div></div><div>У прежнего брокера</div><div>В PERFEX</div></div>
-<div class="t2-cmp-row"><div>Открытые позиции</div><div><span class="t2-x">×</span>Чтобы уйти, нужно закрыть их с убытком</div><div><span class="t2-v">✓</span>Переносятся без закрытия, по ценам открытия</div></div>
-<div class="t2-cmp-row"><div>Средства на сделки</div><div><span class="t2-x">×</span>Всё в марже, новые позиции не открыть</div><div><span class="t2-v">✓</span>До 50% от брокера на новые сделки</div></div>
-<div class="t2-cmp-row"><div>Свопы</div><div><span class="t2-x">×</span>Списываются каждую ночь</div><div><span class="t2-v">✓</span>Swap Free счёт</div></div>
-<div class="t2-cmp-row"><div>Поддержка</div><div><span class="t2-x">×</span>Разбираетесь в одиночку</div><div><span class="t2-v">✓</span>Персональный менеджер и аналитика</div></div>
+<div class="t2-cmp-row"><div></div><div>Обычный уход</div><div>Переход в PERFEX</div></div>
+<div class="t2-cmp-row"><div>Открытые позиции</div><div><span class="t2-x">×</span>Закрываются, результат фиксируется</div><div><span class="t2-v">✓</span>Переносятся без закрытия, по ценам открытия</div></div>
+<div class="t2-cmp-row"><div>Средства на сделки</div><div><span class="t2-x">×</span>Только то, что осталось после закрытия</div><div><span class="t2-v">✓</span>Баланс плюс до 50% от брокера</div></div>
+<div class="t2-cmp-row"><div>Свопы</div><div><span class="t2-x">×</span>Начинаются заново на новом счёте</div><div><span class="t2-v">✓</span>Swap Free счёт</div></div>
+<div class="t2-cmp-row"><div>Поддержка</div><div><span class="t2-x">×</span>Открываете счёт и разбираетесь сами</div><div><span class="t2-v">✓</span>Персональный менеджер и аналитика</div></div>
 </div>
 </div>
 </section>
@@ -579,8 +523,8 @@ html.dark .t2-b-mgr p { color: #B7BDC6; }
 <section class="t2-sec" id="how">
 <div class="wrap">
 <div class="t2-head">
-<h2>Как перенести счёт</h2>
-<p>Три шага. Регистрация занимает около 5 минут.</p>
+<h2>Переход за три шага</h2>
+<p>От регистрации до сделок на новом счёте</p>
 </div>
 <div class="t2-steps">
 <div class="t2-step">
@@ -597,8 +541,8 @@ html.dark .t2-b-mgr p { color: #B7BDC6; }
 <text x="35" y="43" fill="#181A20">1</text>
 </g>
 </svg>
-<h3>Зарегистрируйтесь в PERF<span class="ex">EX</span></h3>
-<p>Создайте аккаунт и пройдите верификацию в личном кабинете</p>
+<h3>Откройте счёт PERF<span class="ex">EX</span></h3>
+<p>Регистрация и верификация в личном кабинете занимают около 5 минут</p>
 </div>
 <div class="t2-step">
 <svg class="t2-num3d" viewBox="0 0 72 72" width="64" height="64" aria-hidden="true">
@@ -614,8 +558,8 @@ html.dark .t2-b-mgr p { color: #B7BDC6; }
 <text x="35" y="43" fill="#181A20">2</text>
 </g>
 </svg>
-<h3>Свяжитесь с менеджером</h3>
-<p>Контакты менеджера в личном кабинете. Отправьте ему выписку со старого счёта: по ней он подберёт условия и восстановит позиции.</p>
+<h3>Пришлите выписку</h3>
+<p>Отправьте менеджеру statement со старого счёта, где видны баланс и открытые позиции. Контакты менеджера есть в личном кабинете.</p>
 </div>
 <div class="t2-step">
 <svg class="t2-num3d" viewBox="0 0 72 72" width="64" height="64" aria-hidden="true">
@@ -631,8 +575,8 @@ html.dark .t2-b-mgr p { color: #B7BDC6; }
 <text x="35" y="43" fill="#181A20">3</text>
 </g>
 </svg>
-<h3>Продолжайте торговать</h3>
-<p>Ордера появятся на новом счёте по тем же ценам. Вы получите средства от брокера и рекомендации по дальнейшей торговле.</p>
+<h3>Получите позиции и средства</h3>
+<p>Менеджер восстановит ордера по ценам открытия и зачислит до 50% к балансу. Дальше торгуете как обычно, без свопов.</p>
 </div>
 </div>
 <p style="margin-top: 28px;"><a href="#" class="cta">Перенести счёт</a></p>
@@ -641,31 +585,73 @@ html.dark .t2-b-mgr p { color: #B7BDC6; }
 
 <section class="t2-sec t2-soft">
 <div class="wrap">
+<div class="t2-head">
+<h2>Правила предложения</h2>
+<p>Коротко о том, кто может участвовать и как работают средства от брокера</p>
+</div>
+<div class="t2-rules">
+<div class="card">
+<h3>Кто может участвовать</h3>
+<ul class="tr-list">
+<li>Клиенты, у которых есть реальный счёт у другого брокера</li>
+<li>Нужна выписка со старого счёта с балансом и открытыми позициями</li>
+<li>Счёт в PERFEX открывается на MetaTrader 4, переход с MT5 и других платформ тоже возможен</li>
+</ul>
+</div>
+<div class="card">
+<h3>Как работают средства от брокера</h3>
+<ul class="tr-list">
+<li>Зачисляются на баланс торгового счёта, до 50% от переносимой суммы</li>
+<li>Участвуют в сделках и поддерживают счёт при просадке</li>
+<li>Доступны для вывода, когда объём закрытых сделок в лотах сравняется с суммой средств в долларах</li>
+<li>Срок не ограничен, торговать можно по любой стратегии</li>
+</ul>
+</div>
+</div>
+<p class="t2-rules-note">Точную сумму и полные условия для вашего счёта назовёт персональный менеджер</p>
+</div>
+</section>
+
+<section class="t2-sec">
+<div class="wrap">
+<div class="t2-head">
+<h2>Почему PERF<span class="ex">EX</span></h2>
+<p>Условия, с которыми вы продолжите торговать после переезда</p>
+</div>
+<div class="t2-why">
+<div class="card"><b>STP/NDD</b><p>Сделки уходят поставщикам ликвидности, без конфликта интересов</p></div>
+<div class="card"><b>от 0 пунктов</b><p>Спред на ECN-ликвидности, без перекотировок</p></div>
+<div class="card"><b>1:1000</b><p>Максимальное кредитное плечо</p></div>
+<div class="card"><b>300+</b><p>Инструментов в 6 классах активов: Forex, металлы, индексы, крипта, энергоносители, сырьё</p></div>
+<div class="card"><b>0%</b><p>Комиссии PERFEX за ввод и вывод, основные методы выводят деньги в пределах часа</p></div>
+<div class="card"><b>24/5</b><p>Поддержка на 8 языках</p></div>
+</div>
+</div>
+</section>
+
+<section class="t2-sec t2-soft">
+<div class="wrap">
 <h2>Частые вопросы</h2>
 <div class="faq faq-acc">
 <details class="faq-item" open>
-<summary><h3>Какие сделки можно перенести?</h3></summary>
-<div class="faq-body"><p>Любые открытые ордера: прибыльные, убыточные и локированные. Они переносятся по ценам открытия, закрывать их перед переездом не нужно.</p></div>
+<summary><h3>Нужно ли закрывать сделки перед переходом?</h3></summary>
+<div class="faq-body"><p>Нет. Менеджер перенесёт все открытые ордера, в том числе убыточные и локированные, по тем ценам, по которым вы их открывали.</p></div>
 </details>
 <details class="faq-item">
-<summary><h3>Что нужно для переноса?</h3></summary>
-<div class="faq-body"><p>Выписка (statement) со старого торгового счёта, где видны баланс и открытые позиции. Формат подскажет персональный менеджер.</p></div>
+<summary><h3>От чего зависит сумма средств от брокера?</h3></summary>
+<div class="faq-body"><p>От баланса, который вы переносите: до 50% от него. Точную сумму менеджер называет после того, как посмотрит выписку.</p></div>
 </details>
 <details class="faq-item">
-<summary><h3>Какие торговые платформы доступны?</h3></summary>
-<div class="faq-body"><p>Мы работаем через MetaTrader 4 (MT4). Если у вас был счёт на MT5 или на любой другой платформе, мы поможем вам перейти на MT4.</p></div>
+<summary><h3>Я торговал на MT5. Перенос возможен?</h3></summary>
+<div class="faq-body"><p>Да. В PERFEX торговля идёт в MetaTrader 4, и менеджер поможет перейти на него с MT5 или любой другой платформы.</p></div>
 </details>
 <details class="faq-item">
-<summary><h3>Есть ли ограничения по инструментам для торговли?</h3></summary>
-<div class="faq-body"><p>Доступны все стандартные торговые инструменты MT4 в PERFEX: валюты, металлы, сырьё, индексы, криптовалюты</p></div>
+<summary><h3>Будут ли списываться свопы по перенесённым позициям?</h3></summary>
+<div class="faq-body"><p>Нет. Позиции переезжают на Swap Free счёт, за перенос через ночь плата не берётся.</p></div>
 </details>
 <details class="faq-item">
-<summary><h3>Как можно использовать торговые средства от PERFEX?</h3></summary>
-<div class="faq-body"><ul class="tr-list">
-<li>Средства учитываются на балансе торгового счёта и доступны для совершения торговых операций, в том числе и в случае просадки депозита</li>
-<li>Средства становятся доступны для вывода с торгового счёта после того, как объём торговых операций достигнет количества закрытых лотов, определяемого по формуле: количество закрытых лотов = сумма торговых средств в USD</li>
-<li>Средства предоставляются на неограниченный срок. Для торговли можно использовать любые торговые стратегии.</li>
-</ul></div>
+<summary><h3>Чем я смогу торговать после переезда?</h3></summary>
+<div class="faq-body"><p>Всеми инструментами PERFEX в MT4: валютами, металлами, сырьём, индексами и криптовалютами</p></div>
 </details>
 </div>
 </div>
@@ -673,8 +659,8 @@ html.dark .t2-b-mgr p { color: #B7BDC6; }
 
 <section class="cta-banner">
 <div class="wrap">
-<h2>Оставьте просадку позади</h2>
-<p>Перенесите счёт и продолжайте торговать с новыми возможностями</p>
+<h2>Переезжайте вместе со сделками</h2>
+<p>Откройте счёт PERFEX, и менеджер возьмёт перенос на себя</p>
 <div class="btns">
 <a href="#" class="btn primary">Перенести счёт</a>
 </div>
